@@ -1,4 +1,4 @@
-import React, {type Node} from 'react';
+import React, {ReactNode} from 'react';
 import {NativeRouter,Route} from "react-router-native";
 
 import Home from '../pages/Home';
@@ -8,7 +8,7 @@ import Creators from '../pages/Creators';
 import Players from '../pages/Players';
 
 // TODO: change to react navigation (https://reactnavigation.org/) 
-function Router(): Node {
+function Router(): ReactNode {
 
     return (
         <NativeRouter>

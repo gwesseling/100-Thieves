@@ -1,10 +1,10 @@
-import React, {type Node} from 'react';
+import React, {ReactNode} from 'react';
 import {View,Text, Image} from 'react-native';
 import general from '../../../style/general';
 import style from '../../../style/pages/teams';
 import {teamsMock} from '../mocks/teamsMock';
 
-function Teams(): Node {
+function Teams(): ReactNode {
 
     // TODO: add mock data
     return (

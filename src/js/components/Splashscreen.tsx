@@ -1,13 +1,13 @@
 // @flow
 
-import React, {Component, type Node} from 'react';
+import React, {ReactNode} from 'react';
 import {View, Image, Text} from 'react-native';
 import styles from '../../style/components/splashscreen';
 import bg from '../../assets/image/splashscreen.jpg';
 import logo from '../../assets/image/logo.png';
 
 // TODO: make native
-function Splashscreen(): Node {
+function Splashscreen(): ReactNode {
     return (
         <View style={styles.container}>
             <Image style={styles.background} source={bg} />

@@ -1,15 +1,16 @@
-import React, {type Node} from 'react';
+import React, {ReactNode} from 'react';
 import {View,Text, Image} from 'react-native';
 import personStyle from '../../../style/components/person';
 
-type Props = {|
+interface Props {
     cover: string,
     name: string,
     tag: string,
-    style: Object,
-|}
+    style?: Object,
+    imageStyle?: Object,
+}
 
-function Person(props: Props): Node {
+function Person(props: Props): ReactNode {
     const {cover, name, tag, style, imageStyle} = props;
 
     return (

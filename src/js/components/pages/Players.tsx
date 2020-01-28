@@ -1,5 +1,5 @@
 // @flow
-import React, {type Node} from 'react';
+import React, {ReactNode} from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
 import general from '../../../style/general';
 import style from '../../../style/pages/players';
@@ -7,7 +7,7 @@ import Section from '../shared/Section';
 import {leaguePlayersMock} from '../mocks/playersMock';
 import Person from '../shared/Person';
 
-function Players(): Node {
+function Players(): ReactNode {
     return (
         <View style={general.pageContainer}>
             <Section 
@@ -17,12 +17,15 @@ function Players(): Node {
                     <Person
                         style={style.player}
                         imageStyle={style.playerImage}
-                        name={'test'}
-                        tag={'test'}
+                        name={item.name}
+                        tag={item.tag}
                         cover={item.cover}
                     />
                 }
                 keyExtractor={item => item.id}
+                snapToAlignment={"start"}
+                snapToInterval={135}
+                decelerationRate={"fast"}
             />
             <Section 
                 title="COUNTER STRIKE: GLOBALE OFFENSIVE"
@@ -37,6 +40,9 @@ function Players(): Node {
                     />
                 }
                 keyExtractor={item => item.id}
+                snapToAlignment={"start"}
+                snapToInterval={135}
+                decelerationRate={"fast"}
             />
             <Section 
                 title="FORTNITE"
@@ -51,6 +57,9 @@ function Players(): Node {
                     />
                 }
                 keyExtractor={item => item.id}
+                snapToAlignment={"start"}
+                snapToInterval={135}
+                decelerationRate={"fast"}
             />
             <Section 
                 title="LEAGUE OF LEGENDS ACADEMY"
@@ -65,6 +74,9 @@ function Players(): Node {
                     />
                 }
                 keyExtractor={item => item.id}
+                snapToAlignment={"start"}
+                snapToInterval={135}
+                decelerationRate={"fast"}
             />
         </View>
     );

@@ -1,4 +1,4 @@
-import React, {type Node} from 'react';
+import React, {ReactNode} from 'react';
 import {View, Image, Text} from 'react-native';
 import styles from '../../../style/pages/about';
 import stylesvars from '../../../style/stylevars';
@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import header from '../../../assets/image/header.jpg';
 
-function About(): Node {
+function About(): ReactNode {
 
     return (
         <View style={styles.page}>

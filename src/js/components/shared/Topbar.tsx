@@ -1,5 +1,5 @@
 // @flow
-import React, {type Node} from 'react';
+import React, {ReactNode} from 'react';
 import {View, Image} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faBars, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
@@ -7,12 +7,7 @@ import styles from '../../../style/components/topbar';
 
 import logo from '../../../assets/image/logo.png';
 
-type Props = {|
-
-|}
-
-function Topbar(props: Props): Node {
-
+function Topbar(): ReactNode {
 
     return (
         <View style={styles.topbar}>

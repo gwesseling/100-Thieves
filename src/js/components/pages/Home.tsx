@@ -1,8 +1,8 @@
-import React, {type Node} from 'react';
+import React, {ReactNode} from 'react';
 import {View,Text} from 'react-native';
 import {Link} from "react-router-native";
 
-function Home(): Node {
+function Home(): ReactNode {
     return (
         <View style={{flex: 1}}>
             <View style={{flex: 1}}>
