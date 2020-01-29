@@ -4,7 +4,7 @@ import {View, Text, Image, FlatList} from 'react-native';
 import general from '../../../style/general';
 import style from '../../../style/pages/players';
 import Section from '../shared/Section';
-import {leaguePlayersMock} from '../mocks/playersMock';
+import {leaguePlayersMock, csPlayersMock, fortnitePlayersMock, lolaPlayersMock} from '../mocks/playersMock';
 import Person from '../shared/Person';
 
 function Players(): ReactNode {
@@ -29,13 +29,13 @@ function Players(): ReactNode {
             />
             <Section 
                 title="COUNTER STRIKE: GLOBALE OFFENSIVE"
-                data={leaguePlayersMock}
+                data={csPlayersMock}
                 renderItem={({item, index}) =>
                     <Person
                         style={style.player}
                         imageStyle={style.playerImage}
-                        name={'test'}
-                        tag={'test'}
+                        name={item.name}
+                        tag={item.tag}
                         cover={item.cover}
                     />
                 }
@@ -46,13 +46,12 @@ function Players(): ReactNode {
             />
             <Section 
                 title="FORTNITE"
-                data={leaguePlayersMock}
+                data={fortnitePlayersMock}
                 renderItem={({item, index}) =>
                     <Person
                         style={style.player}
                         imageStyle={style.playerImage}
-                        name={'test'}
-                        tag={'test'}
+                        name={item.name}
                         cover={item.cover}
                     />
                 }
@@ -63,13 +62,13 @@ function Players(): ReactNode {
             />
             <Section 
                 title="LEAGUE OF LEGENDS ACADEMY"
-                data={leaguePlayersMock}
+                data={lolaPlayersMock}
                 renderItem={({item, index}) =>
                     <Person
                         style={style.player}
                         imageStyle={style.playerImage}
-                        name={'test'}
-                        tag={'test'}
+                        name={item.name}
+                        tag={item.tag}
                         cover={item.cover}
                     />
                 }

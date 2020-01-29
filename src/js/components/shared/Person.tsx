@@ -17,7 +17,7 @@ function Person(props: Props): ReactNode {
         <View style={[personStyle.person, style]}>
             <Image style={[personStyle.personImage, imageStyle]} source={cover} />
             <Text style={personStyle.personName}>{name}</Text>
-            <Text style={personStyle.personTag}>{tag}</Text>
+            {tag ? <Text style={personStyle.personTag}>{tag}</Text> : null}
         </View>
     );
 }
