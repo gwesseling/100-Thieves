@@ -1,10 +1,10 @@
 import React, {ReactNode} from 'react';
 import {View, Image, Text} from 'react-native';
-import styles from '../../../style/pages/about';
-import stylesvars from '../../../style/stylevars';
+import styles from '_STYLES/pages/about';
+import stylesvars from '_STYLES/stylevars';
 import LinearGradient from 'react-native-linear-gradient';
 
-import header from '../../../assets/image/header.jpg';
+import header from '_ASSETS/image/header.jpg';
 
 function About(): ReactNode {
 

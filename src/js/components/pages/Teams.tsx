@@ -1,12 +1,11 @@
 import React, {ReactNode} from 'react';
 import {View,Text, Image} from 'react-native';
-import general from '../../../style/general';
-import style from '../../../style/pages/teams';
-import {teamsMock} from '../mocks/teamsMock';
+import general from '_STYLES/general';
+import style from '_STYLES/pages/teams';
+import {teamsMock} from '_COMPONENTS/mocks/teamsMock';
 
 function Teams(): ReactNode {
-
-    // TODO: add mock data
+    
     return (
         <View style={general.pageContainer}>
             <Text style={general.pageTitle}>Teams</Text>

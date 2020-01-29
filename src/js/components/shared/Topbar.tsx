@@ -3,9 +3,9 @@ import React, {ReactNode} from 'react';
 import {View, Image} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faBars, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
-import styles from '../../../style/components/topbar';
+import styles from '_STYLES/components/topbar';
 
-import logo from '../../../assets/image/logo.png';
+import logo from '_ASSETS/image/logo.png';
 
 function Topbar(): ReactNode {
 

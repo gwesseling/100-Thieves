@@ -16,7 +16,7 @@
           "_LIBS": ["src/js/*"],
           "_ASSETS": ["src/assets/*"],
           "_COMPONENTS": ["src/js/components/*"],
-          "_STYLE": ["src/style/*"],
+          "_STYLES": ["src/style/*"],
           "_SHARED": ["src/js/components/shared/*"]
       }
     },

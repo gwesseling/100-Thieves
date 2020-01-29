@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react';
 import {View,Text, Image} from 'react-native';
-import personStyle from '../../../style/components/person';
+import personStyle from '_STYLES/components/person';
 
 interface Props {
     cover: string,

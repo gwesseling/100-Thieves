@@ -1,30 +1,30 @@
-import ssumday from '../../../assets/image/league/ssumday.jpeg';
-import meteos from '../../../assets/image/league/meteos.jpg';
-import cody from '../../../assets/image/league/cody.jpg';
-import ryoma from '../../../assets/image/league/ryoma.jpg';
-import stunt from '../../../assets/image/league/stunt.jpg';
-import chris from '../../../assets/image/league/chris.jpg';
-import zikz from '../../../assets/image/league/zikz.jpg';
+import ssumday from '_ASSETS/image/league/ssumday.jpeg';
+import meteos from '_ASSETS/image/league/meteos.jpg';
+import cody from '_ASSETS/image/league/cody.jpg';
+import ryoma from '_ASSETS/image/league/ryoma.jpg';
+import stunt from '_ASSETS/image/league/stunt.jpg';
+import chris from '_ASSETS/image/league/chris.jpg';
+import zikz from '_ASSETS/image/league/zikz.jpg';
 
-import azr from '../../../assets/image/cs/azr.jpg';
-import jks from '../../../assets/image/cs/jks.jpg';
-import jkaem from '../../../assets/image/cs/jkaem.jpeg';
-import liazz from '../../../assets/image/cs/liazz.jpg';
-import gratisfaction from '../../../assets/image/cs/gratisfaction.jpg';
-import kassad from '../../../assets/image/cs/kassad.jpg';
+import azr from '_ASSETS/image/cs/azr.jpg';
+import jks from '_ASSETS/image/cs/jks.jpg';
+import jkaem from '_ASSETS/image/cs/jkaem.jpeg';
+import liazz from '_ASSETS/image/cs/liazz.jpg';
+import gratisfaction from '_ASSETS/image/cs/gratisfaction.jpg';
+import kassad from '_ASSETS/image/cs/kassad.jpg';
 
-import elevate from '../../../assets/image/fortnite/elevate.jpg';
-import ceice from '../../../assets/image/fortnite/ceice.png';
-import kyzui from '../../../assets/image/fortnite/kyzui.jpg';
-import klass from '../../../assets/image/fortnite/klass.jpeg';
-import arkhram from '../../../assets/image/fortnite/arkhram.jpg';
+import elevate from '_ASSETS/image/fortnite/elevate.jpg';
+import ceice from '_ASSETS/image/fortnite/ceice.png';
+import kyzui from '_ASSETS/image/fortnite/kyzui.jpg';
+import klass from '_ASSETS/image/fortnite/klass.jpeg';
+import arkhram from '_ASSETS/image/fortnite/arkhram.jpg';
 
-import fakegod from '../../../assets/image/lola/fakegod.jpg';
-import soligo from '../../../assets/image/lola/soligo.jpg';
-import prismal from '../../../assets/image/lola/prismal.jpg';
-import kelsey from '../../../assets/image/lola/kelsey.jpg';
+import fakegod from '_ASSETS/image/lola/fakegod.jpg';
+import soligo from '_ASSETS/image/lola/soligo.jpg';
+import prismal from '_ASSETS/image/lola/prismal.jpg';
+import kelsey from '_ASSETS/image/lola/kelsey.jpg';
 
-import def from '../../../assets/image/logo.png';
+import def from '_ASSETS/image/logo.png';
 
 export const leaguePlayersMock = [
     {

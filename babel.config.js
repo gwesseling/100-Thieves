@@ -7,11 +7,11 @@ module.exports = {
          root: ['./src'],
          extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json', '.jpg', '.jpeg', '.png'],
          alias: {
-            "_ASSETS/*": ["./src/assets/"],
-            "_LIBS/*": ["./src/js/"],
-            "_COMPONENTS/*": ["./src/js/components/"],
-            "_STYLE/*": ["./src/style/"],
-            "_SHARED/*": ["./src/js/components/shared/"]
+            "_ASSETS": ["./src/assets"],
+            "_LIBS": ["./src/js"],
+            "_COMPONENTS": ["./src/js/components"],
+            "_STYLES": ["./src/style"],
+            "_SHARED": ["./src/js/components/shared"]
          }
        }
      ]

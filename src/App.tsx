@@ -15,9 +15,9 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import stylevars from './style/stylevars';
+import stylevars from '_STYLES/stylevars';
 
-import Main from './js/components/entrypoints/Main';
+import Main from '_COMPONENTS/entrypoints/Main';
 
 const App: () => React$Node = () => {
   return (

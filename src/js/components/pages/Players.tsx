@@ -1,11 +1,11 @@
 // @flow
 import React, {ReactNode} from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
-import general from '../../../style/general';
-import style from '../../../style/pages/players';
-import Section from '../shared/Section';
-import {leaguePlayersMock, csPlayersMock, fortnitePlayersMock, lolaPlayersMock} from '../mocks/playersMock';
-import Person from '../shared/Person';
+import general from '_STYLES/general';
+import style from '_STYLES/pages/players';
+import Section from '_SHARED/Section';
+import {leaguePlayersMock, csPlayersMock, fortnitePlayersMock, lolaPlayersMock} from '_COMPONENTS/mocks/playersMock';
+import Person from '_SHARED/Person';
 
 function Players(): ReactNode {
     return (

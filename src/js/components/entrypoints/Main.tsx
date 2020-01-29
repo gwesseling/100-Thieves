@@ -1,16 +1,16 @@
 // @flow
 import React, {ReactNode} from 'react';
 import {ScrollView, View} from 'react-native';
-import styles from '../../../style/general';
-import Router from './Router';
-import Splashscreen from '../Splashscreen';
-import Topbar from '../shared/Topbar';
+import styles from '_STYLES/general';
+import Router from '_COMPONENTS/entrypoints/Router';
+import Splashscreen from '_COMPONENTS/Splashscreen';
+import Topbar from '_SHARED/Topbar';
 
 interface Props {
 
 }
 
-// TODO: import aliases and router enum.
+// TODO: router enum.
 function Main(props: Props): ReactNode {
 
     return (

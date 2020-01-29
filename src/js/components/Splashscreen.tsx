@@ -2,9 +2,9 @@
 
 import React, {ReactNode} from 'react';
 import {View, Image, Text} from 'react-native';
-import styles from '../../style/components/splashscreen';
-import bg from '../../assets/image/splashscreen.jpg';
-import logo from '../../assets/image/logo.png';
+import styles from '_STYLES/components/splashscreen';
+import bg from '_ASSETS/image/splashscreen.jpg';
+import logo from '_ASSETS/image/logo.png';
 
 // TODO: make native
 function Splashscreen(): ReactNode {

@@ -1,14 +1,14 @@
-import noahj from '../../../assets/image/creators/noahj456.jpg';
-import courage from '../../../assets/image/creators/courage.jpg';
-import valkyrae from '../../../assets/image/creators/valkyrae.jpg';
-import nadeshot from '../../../assets/image/creators/nadeshot.jpg';
-import brooke from '../../../assets/image/creators/brooke.jpg';
-import moe from '../../../assets/image/creators/moe.jpg';
-import gigz from '../../../assets/image/creators/gigz.jpg';
-import avalanche from '../../../assets/image/creators/avalanche.jpg';
-import classy from '../../../assets/image/creators/classy.jpg';
-import froste from '../../../assets/image/creators/froste.jpg';
-import mako from '../../../assets/image/creators/mako.jpg';
+import noahj from '_ASSETS/image/creators/noahj456.jpg';
+import courage from '_ASSETS/image/creators/courage.jpg';
+import valkyrae from '_ASSETS/image/creators/valkyrae.jpg';
+import nadeshot from '_ASSETS/image/creators/nadeshot.jpg';
+import brooke from '_ASSETS/image/creators/brooke.jpg';
+import moe from '_ASSETS/image/creators/moe.jpg';
+import gigz from '_ASSETS/image/creators/gigz.jpg';
+import avalanche from '_ASSETS/image/creators/avalanche.jpg';
+import classy from '_ASSETS/image/creators/classy.jpg';
+import froste from '_ASSETS/image/creators/froste.jpg';
+import mako from '_ASSETS/image/creators/mako.jpg';
 
 export const creatorsMock = [
     {

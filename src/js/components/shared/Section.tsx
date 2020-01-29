@@ -1,7 +1,7 @@
 // @flow
 import React, {ReactNode} from 'react';
 import {View, FlatList, Text} from 'react-native';
-import style from '../../../style/components/section';
+import style from '_STYLES/components/section';
 
 interface Props {
     title: string,

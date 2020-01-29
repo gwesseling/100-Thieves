@@ -1,9 +1,9 @@
 import React, {ReactNode} from 'react';
 import {View,Text} from 'react-native';
-import general from '../../../style/general';
-import style from '../../../style/pages/creators';
-import {creatorsMock} from '../mocks/creatorsMock';
-import Person from '../shared/Person';
+import general from '_STYLES/general';
+import style from '_STYLES/pages/creators';
+import {creatorsMock} from '_COMPONENTS/mocks/creatorsMock';
+import Person from '_SHARED/Person';
 
 function Creators(): ReactNode {
     return (

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import stylevars from '../stylevars';
+import stylevars from '_STYLES/stylevars';
 
 const styles = StyleSheet.create({
     topbar: {

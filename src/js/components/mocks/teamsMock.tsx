@@ -1,7 +1,7 @@
-import lol from '../../../assets/image/lol.jpg';
-import fortnite from '../../../assets/image/fortnite.jpg';
-import lola from '../../../assets/image/lola.jpg';
-import csgo from '../../../assets/image/csgo.jpg';
+import lol from '_ASSETS/image/lol.jpg';
+import fortnite from '_ASSETS/image/fortnite.jpg';
+import lola from '_ASSETS/image/lola.jpg';
+import csgo from '_ASSETS/image/csgo.jpg';
 
 export const teamsMock = [
     {
