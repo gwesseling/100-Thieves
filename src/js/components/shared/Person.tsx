@@ -2,7 +2,7 @@ import React, {ReactNode} from 'react';
 import {View,Text, Image} from 'react-native';
 import personStyle from '_STYLES/components/person';
 
-interface Props {
+type Props = {
     cover: string,
     name: string,
     tag: string,

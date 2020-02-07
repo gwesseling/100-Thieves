@@ -3,7 +3,7 @@ import React, {ReactNode} from 'react';
 import {View, FlatList, Text} from 'react-native';
 import style from '_STYLES/components/section';
 
-interface Props {
+type Props = {
     title: string,
     data: Array<Object>,
     renderItem: (item: Object, index: number) => ReactNode,

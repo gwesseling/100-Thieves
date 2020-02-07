@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     },
     header: {
         width: '100%',
-        aspectRatio: 1.5,
+        aspectRatio: 1.3,
         marginBottom: 10,
     },
     headerImage: {

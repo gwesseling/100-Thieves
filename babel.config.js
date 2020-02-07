@@ -11,7 +11,8 @@ module.exports = {
             "_LIBS": ["./src/js"],
             "_COMPONENTS": ["./src/js/components"],
             "_STYLES": ["./src/style"],
-            "_SHARED": ["./src/js/components/shared"]
+            "_SHARED": ["./src/js/components/shared"],
+            "_HOOKS": ["./src/js/components/hooks"]
          }
        }
      ]

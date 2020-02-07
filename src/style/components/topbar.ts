@@ -10,6 +10,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
     },
+    topbarActive: {
+        backgroundColor: 'transparent',
+        position: 'absolute',
+        zIndex: 999,
+    },
     topbarMenu: {
         color: 'white',
         marginTop: 10,

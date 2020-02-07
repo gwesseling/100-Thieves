@@ -4,7 +4,7 @@ import stylevars from '_STYLES/stylevars';
 const styles = StyleSheet.create({
     card: {
         width: '100%',
-        aspectRatio: 2.3,
+        aspectRatio: 2.5,
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
