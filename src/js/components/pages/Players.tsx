@@ -1,8 +1,8 @@
 // @flow
 import React, {ReactNode, Fragment} from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
-import general from '_STYLES/general';
-import style from '_STYLES/pages/players';
+import generalStyles from '_STYLES/general';
+import styles from '_STYLES/pages/players';
 import Section from '_SHARED/Section';
 import {leaguePlayersMock, csPlayersMock, fortnitePlayersMock, lolaPlayersMock} from '_COMPONENTS/mocks/playersMock';
 import Person from '_SHARED/Person';
@@ -13,13 +13,13 @@ function Players(): ReactNode {
     return (
         <Fragment>
             <Topbar />
-            <Content style={general.pageContainer}>
+            <Content style={generalStyles.pageContainer}>
                 <Section 
                     title="LEAGUE OF LEGENDS"
                     data={leaguePlayersMock}
                     renderItem={({item, index}) =>
                         <Person
-                            style={style.player}
+                            styles={{containerStyle: styles.player}}
                             imageStyle={style.playerImage}
                             name={item.name}
                             tag={item.tag}
@@ -36,7 +36,7 @@ function Players(): ReactNode {
                     data={csPlayersMock}
                     renderItem={({item, index}) =>
                         <Person
-                            style={style.player}
+                            styles={{containerStyle: styles.player}}
                             imageStyle={style.playerImage}
                             name={item.name}
                             tag={item.tag}
@@ -53,7 +53,7 @@ function Players(): ReactNode {
                     data={fortnitePlayersMock}
                     renderItem={({item, index}) =>
                         <Person
-                            style={style.player}
+                            styles={{containerStyle: styles.player}}
                             imageStyle={style.playerImage}
                             name={item.name}
                             cover={item.cover}
@@ -69,7 +69,7 @@ function Players(): ReactNode {
                     data={lolaPlayersMock}
                     renderItem={({item, index}) =>
                         <Person
-                            style={style.player}
+                            styles={{containerStyle: styles.player}}
                             imageStyle={style.playerImage}
                             name={item.name}
                             tag={item.tag}

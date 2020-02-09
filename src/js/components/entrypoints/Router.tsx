@@ -8,6 +8,7 @@ import 'react-native-gesture-handler';
 import Home from '_COMPONENTS/pages/Home';
 import About from '_COMPONENTS/pages/About';
 import Teams from '_COMPONENTS/pages/Teams';
+import Creator from '_COMPONENTS/pages/Creator';
 import Creators from '_COMPONENTS/pages/Creators';
 import Players from '_COMPONENTS/pages/Players';
 
@@ -16,6 +17,7 @@ const Drawer = createDrawerNavigator(
     Home,
     About,
     Teams,
+    Creator,
     Creators,
     Players
   },

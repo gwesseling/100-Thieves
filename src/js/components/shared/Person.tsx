@@ -11,13 +11,14 @@ type Props = {
 }
 
 function Person(props: Props): ReactNode {
-    const {cover, name, tag, style, imageStyle} = props;
+    const {cover, name, tag, styles = {}} = props;
+    const {containerStyle, imageStyle, nameStyle, tagStyle} = styles;
 
     return (
-        <View style={[personStyle.person, style]}>
+        <View style={[personStyle.person, containerStyle]}>
             <Image style={[personStyle.personImage, imageStyle]} source={cover} />
-            <Text style={personStyle.personName}>{name}</Text>
-            {tag ? <Text style={personStyle.personTag}>{tag}</Text> : null}
+            <Text style={[personStyle.personName, nameStyle]}>{name}</Text>
+            {tag ? <Text style={[personStyle.personTag, tagStyle]}>{tag}</Text> : null}
         </View>
     );
 }

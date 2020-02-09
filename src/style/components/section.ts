@@ -2,9 +2,6 @@ import {StyleSheet} from 'react-native';
 import stylevars from '_STYLES/stylevars';
 
 const style = StyleSheet.create({
-    section: {
-
-    },
     sectionText: {
         color: stylevars.textColor,
         fontWeight: 'bold',

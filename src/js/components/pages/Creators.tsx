@@ -5,7 +5,6 @@ import styles from '_STYLES/pages/creators';
 import {creatorsMock} from '_COMPONENTS/mocks/creatorsMock';
 import Person from '_SHARED/Person';
 import Topbar from '_SHARED/Topbar';
-import Content from '_SHARED/Content';
 
 function Creators(): ReactNode {
     return (

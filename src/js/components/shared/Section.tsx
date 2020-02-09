@@ -11,11 +11,11 @@ type Props = {
 }
 
 function Section(props: Props): ReactNode {
-    const {title, ...restProps} = props;
+    const {title, style = {}, ...restProps} = props;
 
     return (
-        <View style={style.section}>
-            <Text style={style.sectionText}>{title}</Text>
+        <View style={[style.section, style]}>
+            {title && <Text style={style.sectionText}>{title}</Text>}
             <FlatList 
                 horizontal
                 showsHorizontalScrollIndicator={false}
