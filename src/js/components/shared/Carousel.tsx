@@ -1,7 +1,6 @@
-// @flow
 import React, {ReactNode} from 'react';
 import {View, FlatList, Text} from 'react-native';
-import style from '_STYLES/components/section';
+import styles from '_STYLES/components/carousel';
 
 type Props = {
     title: string,
@@ -12,10 +11,11 @@ type Props = {
 
 function Section(props: Props): ReactNode {
     const {title, style = {}, ...restProps} = props;
+    const {containerStyle, titleStyle} = style;
 
     return (
-        <View style={[style.section, style]}>
-            {title && <Text style={style.sectionText}>{title}</Text>}
+        <View style={[containerStyle]}>
+            {title && <Text style={[styles.sectionText, titleStyle]}>{title}</Text>}
             <FlatList 
                 horizontal
                 showsHorizontalScrollIndicator={false}

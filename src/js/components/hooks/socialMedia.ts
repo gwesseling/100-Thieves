@@ -1,6 +1,6 @@
 import {View, Text, TouchableNativeFeedback, Linking} from 'react-native';
 import {faLink} from '@fortawesome/free-solid-svg-icons'
-import {faTwitter, faYoutube, faInstagram, faTwitch, faFacebookF, faDiscord} from '@fortawesome/free-brands-svg-icons';
+import {faTwitter, faYoutube, faInstagram, faTwitch, faFacebookF, faDiscord, faSnapchatGhost} from '@fortawesome/free-brands-svg-icons';
 
 export enum SOCIAL_MEDIA_TYPES {
     twitter,
@@ -8,6 +8,7 @@ export enum SOCIAL_MEDIA_TYPES {
     instagram,
     twitch,
     facebook,
+    snapchat,
     discord,
     website,
 }
@@ -29,15 +30,19 @@ export default function useSocialMedia() {
                 return {color: '#2D4474', icon: faFacebookF};
             case SOCIAL_MEDIA_TYPES.discord:
                 return {color: '#7289DA', icon: faDiscord};
+            case SOCIAL_MEDIA_TYPES.snapchat:
+                return {color: '#CCCA00', icon: faSnapchatGhost}
             case SOCIAL_MEDIA_TYPES.link:
                 return {color: 'white', icon: faLink};
         }
     }
 
     const openLink = (link: string) => {
-        Linking.openURL(link).catch(() => {
-            // TODO: throw toast/ notification
-        });
+        if (link) {
+            Linking.openURL(link).catch(() => {
+                // TODO: throw toast/ notification
+            });
+        }
     }
 
     return {

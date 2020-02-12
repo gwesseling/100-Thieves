@@ -1,6 +1,5 @@
 import React, {ReactNode, Fragment} from 'react';
 import {View,Text, Image} from 'react-native';
-import general from '_STYLES/general';
 import style from '_STYLES/pages/teams';
 import {teamsMock} from '_COMPONENTS/mocks/teamsMock';
 import Topbar from '_SHARED/Topbar';
@@ -10,7 +9,7 @@ function Teams(): ReactNode {
     return (
         <Fragment>
             <Topbar />
-            <Content style={general.pageContainer} title="Teams">
+            <Content title="Teams">
                 {teamsMock.map(({name, cover}, i) => {
                     let black = i % 2 != 0 ? style.cardOverlayBlack : {};
 

@@ -2,8 +2,11 @@ import {StyleSheet} from 'react-native';
 import stylevars from '_STYLES/stylevars';
 
 const styles = StyleSheet.create({
+    pageContainer: {
+        paddingRight: 0
+    },
     creator: {
-        marginBottom: 0,
+        marginBottom: 0
     },
     creatorName: {
         fontSize: 20,
@@ -35,7 +38,7 @@ const styles = StyleSheet.create({
         color: stylevars.textColor,
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 5,
+        marginBottom: 10,
     },
     aboutText: {
         color: stylevars.lighterTextColor,

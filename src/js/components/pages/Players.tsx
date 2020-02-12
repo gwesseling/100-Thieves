@@ -1,9 +1,7 @@
-// @flow
 import React, {ReactNode, Fragment} from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
-import generalStyles from '_STYLES/general';
 import styles from '_STYLES/pages/players';
-import Section from '_SHARED/Section';
+import Carousel from '_SHARED/Carousel';
 import {leaguePlayersMock, csPlayersMock, fortnitePlayersMock, lolaPlayersMock} from '_COMPONENTS/mocks/playersMock';
 import Person from '_SHARED/Person';
 import Topbar from '_SHARED/Topbar';
@@ -13,14 +11,14 @@ function Players(): ReactNode {
     return (
         <Fragment>
             <Topbar />
-            <Content style={generalStyles.pageContainer}>
-                <Section 
+            <Content style={styles.players}>
+                <Carousel 
                     title="LEAGUE OF LEGENDS"
                     data={leaguePlayersMock}
                     renderItem={({item, index}) =>
                         <Person
                             styles={{containerStyle: styles.player}}
-                            imageStyle={style.playerImage}
+                            imageStyle={styles.playerImage}
                             name={item.name}
                             tag={item.tag}
                             cover={item.cover}
@@ -31,13 +29,13 @@ function Players(): ReactNode {
                     snapToInterval={135}
                     decelerationRate={"fast"}
                 />
-                <Section 
+                <Carousel 
                     title="COUNTER STRIKE: GLOBALE OFFENSIVE"
                     data={csPlayersMock}
                     renderItem={({item, index}) =>
                         <Person
                             styles={{containerStyle: styles.player}}
-                            imageStyle={style.playerImage}
+                            imageStyle={styles.playerImage}
                             name={item.name}
                             tag={item.tag}
                             cover={item.cover}
@@ -48,13 +46,13 @@ function Players(): ReactNode {
                     snapToInterval={135}
                     decelerationRate={"fast"}
                 />
-                <Section 
+                <Carousel 
                     title="FORTNITE"
                     data={fortnitePlayersMock}
                     renderItem={({item, index}) =>
                         <Person
                             styles={{containerStyle: styles.player}}
-                            imageStyle={style.playerImage}
+                            imageStyle={styles.playerImage}
                             name={item.name}
                             cover={item.cover}
                         />
@@ -64,13 +62,13 @@ function Players(): ReactNode {
                     snapToInterval={135}
                     decelerationRate={"fast"}
                 />
-                <Section 
+                <Carousel 
                     title="LEAGUE OF LEGENDS ACADEMY"
                     data={lolaPlayersMock}
                     renderItem={({item, index}) =>
                         <Person
                             styles={{containerStyle: styles.player}}
-                            imageStyle={style.playerImage}
+                            imageStyle={styles.playerImage}
                             name={item.name}
                             tag={item.tag}
                             cover={item.cover}

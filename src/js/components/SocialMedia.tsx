@@ -9,6 +9,7 @@ type Props = {
     type: SOCIAL_MEDIA_TYPES,
 }
 
+//TODO: add verify check?
 function SocialMedia(props: Props): ReactNode {
     const {title, tag, type, link} = props;
     const {getIconStyle, openLink} = useSocialMedia();

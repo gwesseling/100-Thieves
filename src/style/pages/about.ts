@@ -3,8 +3,8 @@ import stylevars from '_STYLES/stylevars';
 
 const styles = StyleSheet.create({
     page: {
-        flex: 1,
-        marginBottom: 15,
+        paddingLeft: 0, 
+        paddingRight: 0
     },
     header: {
         width: '100%',

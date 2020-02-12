@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 const style = StyleSheet.create({
+    players: {
+        paddingRight: 0
+    },
     player: {
         padding: 10,
     },
