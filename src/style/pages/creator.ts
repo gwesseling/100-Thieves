@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         marginBottom: 25,
+        paddingRight: 15,
     },
     stat: {
         flex: 1,
@@ -33,6 +34,9 @@ const styles = StyleSheet.create({
     },
     stateTitle: {
         color: stylevars.lighterTextColor,
+    },
+    aboutContainer: {
+        paddingRight: 15,
     },
     aboutTitle: {
         color: stylevars.textColor,

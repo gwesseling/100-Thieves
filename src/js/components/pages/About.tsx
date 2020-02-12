@@ -18,40 +18,40 @@ function About(): ReactNode {
                 <LinearGradient style={styles.headerOverlay} colors={[stylevars.primaryColor, 'transparent', 'transparent', stylevars.primaryColor]} locations={[0, 0.5, 0.8, 1]} />
             </View>
             <View style={styles.section}>
-                    <Text style={styles.sectionHeader}>100 thieves</Text>
-                    <Text style={[styles.sectionText, styles.sectionTextContainer]}>100 Thieves ("Hundred Thieves") is a
-                        premium lifestyle brand and gaming 
-                        organization. Built at the intersection 
-                        of competitive gaming, entertainment,
-                        and apparel, 100 Thieves was 
-                        founded in 2017 by Matthew 
-                        "Nadeshot" Haag, the former OpTic 
-                        Gaming Call of Duty captain, 
-                        X Games gold medalist, and 2014 
-                        Esports Athlete of the Year. After 
-                        retiring from competitive play, 
-                        Matt founded 100 Thieves as a 
-                        creative outlet for his entrepreneurial 
-                        passions. In its first two years, 100 
-                        Thieves has won multiple esports 
-                        major championships in Call of Duty, 
-                        made the League of Legends and 
-                        Fortnite World Championships, 
-                        launched the top gaming podcasts 
-                        on iTunes, sold out over a dozen 
-                        apparel drops, and is supported by 
-                        major partners such as Cash App, 
-                        General Mills, Rocket Mortgage, 
-                        and Red Bull. The company has 
-                        raised $60M from investors including 
-                        Drake, Scooter Braun, Cleveland 
-                        Cavaliers Owner & Quicken Loans 
-                        Chairman Dan Gilbert, Artist Capital 
-                        Management, Ludlow Ventures, 
-                        Green Bay Ventures, and Sequoia. 
-                        100 Thieves' mission is to give every 
-                        gamer something to be proud of.
-                    </Text>
+                <Text style={styles.sectionHeader}>100 thieves</Text>
+                <Text style={[styles.sectionText, styles.sectionTextContainer]}>100 Thieves ("Hundred Thieves") is a
+                    premium lifestyle brand and gaming 
+                    organization. Built at the intersection 
+                    of competitive gaming, entertainment,
+                    and apparel, 100 Thieves was 
+                    founded in 2017 by Matthew 
+                    "Nadeshot" Haag, the former OpTic 
+                    Gaming Call of Duty captain, 
+                    X Games gold medalist, and 2014 
+                    Esports Athlete of the Year. After 
+                    retiring from competitive play, 
+                    Matt founded 100 Thieves as a 
+                    creative outlet for his entrepreneurial 
+                    passions. In its first two years, 100 
+                    Thieves has won multiple esports 
+                    major championships in Call of Duty, 
+                    made the League of Legends and 
+                    Fortnite World Championships, 
+                    launched the top gaming podcasts 
+                    on iTunes, sold out over a dozen 
+                    apparel drops, and is supported by 
+                    major partners such as Cash App, 
+                    General Mills, Rocket Mortgage, 
+                    and Red Bull. The company has 
+                    raised $60M from investors including 
+                    Drake, Scooter Braun, Cleveland 
+                    Cavaliers Owner & Quicken Loans 
+                    Chairman Dan Gilbert, Artist Capital 
+                    Management, Ludlow Ventures, 
+                    Green Bay Ventures, and Sequoia. 
+                    100 Thieves' mission is to give every 
+                    gamer something to be proud of.
+                </Text>
             </View>
             <View style={styles.section}>
                     <Text style={styles.sectionHeader}>matthew Nadeshot haag</Text>

@@ -47,7 +47,7 @@ function Creator(): ReactNode {
                     </View>
                 </View>
                 {about ?
-                    <View>
+                    <View style={styles.aboutContainer}>
                         <Text style={styles.aboutTitle}>About</Text>
                         {about.map((text, i) => 
                             <Text key={i} style={styles.aboutText}>{text}</Text>

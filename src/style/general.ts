@@ -5,8 +5,6 @@ const styles = StyleSheet.create({
     main: {
         flex: 1,
         backgroundColor: stylevars.primaryColor,
-    },
-    pageContainer: {
         paddingTop: 10,
         paddingLeft: 15,
         paddingRight: 15,

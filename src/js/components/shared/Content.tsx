@@ -13,7 +13,7 @@ function Content(props: Props): ReactNode {
     const {style = {}, title, children, withoutScrollView} = props;
 
     return (
-        <View style={[generalStyles.main, generalStyles.pageContainer, style]}>
+        <View style={[generalStyles.main, style]}>
             {title && <Text style={generalStyles.pageTitle}>{title}</Text>}
             {!withoutScrollView ?
                 <ScrollView
