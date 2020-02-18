@@ -1,50 +1,33 @@
-import React from 'react';
-import {View} from 'react-native';
-import {createDrawerNavigator} from 'react-navigation-drawer';
-import {createAppContainer, createSwitchNavigator} from 'react-navigation';
-import stylevars from '_STYLES/stylevars';
-import 'react-native-gesture-handler';
+import React from "react";
+import {createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native";
+import Topbar from "_SHARED/Topbar";
 
-import Home from '_COMPONENTS/pages/Home';
-import About from '_COMPONENTS/pages/About';
-import Teams from '_COMPONENTS/pages/Teams';
-import Creator from '_COMPONENTS/pages/Creator';
-import Creators from '_COMPONENTS/pages/Creators';
-import Players from '_COMPONENTS/pages/Players';
+import Home from "_COMPONENTS/pages/Home";
+import About from "_COMPONENTS/pages/About";
+import Teams from "_COMPONENTS/pages/Teams";
+import Creator from "_COMPONENTS/pages/Creator";
+import Creators from "_COMPONENTS/pages/Creators";
+import Players from "_COMPONENTS/pages/Players";
 
-const Drawer = createDrawerNavigator(
-  {
-    Home,
-    About,
-    Teams,
-    Creator,
-    Creators,
-    Players
-  },
-  {
-    drawerBackgroundColor: stylevars.primaryColor,
-    overlayColor: 'rgba(0,0,0, .3)',
-    hideStatusBar: true,
-    statusBarAnimation: true,
-    contentOptions: {
-      activeTintColor: stylevars.secondaryColor,
-      inactiveTintColor: stylevars.textColor,
-      itemsContainerStyle: {
-       
-      },
-      labelStyle: {
-        fontSize: 16,
-        textTransform: 'uppercase'
-      }
-    }
-  }
-);
+const Stack = createStackNavigator();
 
-// TODO: router enum
-const Router = createAppContainer(
-  createSwitchNavigator({
-    Main: Drawer
-  })
-);
+/**
+ * Router
+ */
+function Router() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Creators" headerMode="none">
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="About" component={About} />
+                <Stack.Screen name="Teams" component={Teams} />
+                <Stack.Screen name="Creators" component={Creators} />
+                <Stack.Screen name="Players" component={Players} />
+                <Stack.Screen name="Creator" component={Creator} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
 
 export default Router;

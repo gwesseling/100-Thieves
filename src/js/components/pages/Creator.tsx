@@ -1,22 +1,32 @@
-import React, {ReactNode, Fragment} from 'react';
-import {View, Text, Image} from 'react-native';
-import styles from '_STYLES/pages/creator';
-import Topbar from '_SHARED/Topbar';
-import Content from '_SHARED/Content';
-import Person from '_SHARED/Person';
-import Carousel from '_SHARED/Carousel';
-import SocialMedia from '_COMPONENTS/SocialMedia';
-import Video from '_COMPONENTS/Video';
-import {creatorsMock} from '_COMPONENTS/mocks/creatorsMock';
-import {formatNumber} from '_LIBS/numbers';
+// TODO: split up component
+/* eslint-disable max-lines-per-function */
+import React, {ReactNode, Fragment} from "react";
+import {View, Text, Image} from "react-native";
+import styles from "_STYLES/pages/creator";
+import Topbar from "_SHARED/Topbar";
+import Content from "_SHARED/Content";
+import Person from "_SHARED/Person";
+import Carousel from "_SHARED/Carousel";
+import SocialMedia from "_COMPONENTS/SocialMedia";
+import Video from "_COMPONENTS/Video";
+import Stat from "_COMPONENTS/Stat";
+import {creatorsMock} from "_COMPONENTS/mocks/creatorsMock";
+import {openLink} from "_LIBS/linking";
+import {useRoute} from "@react-navigation/native";
 
-import useCreatorStats from '_HOOKS/creatorStats';
-import useCreatorVideos from '_HOOKS/creatorVideos';
+import useCreatorStats from "_HOOKS/creatorStats";
+import useCreatorVideos from "_HOOKS/creatorVideos";
 
+// TODO: section and formatNumber component.
+/**
+ * Creator component
+ */
 function Creator(): ReactNode {
-    const {name, tag, cover, about, links, channelID} = creatorsMock[0];
-    const {videoCount, subCount, viewCount} = useCreatorStats(channelID);
-    const {videos} = useCreatorVideos(channelID);
+    const route = useRoute();
+    const id = route.params?.id || 0;
+    const {name, tag, cover, about, links, channelID} = creatorsMock[id];
+    const {subscriberCount = 0, videoCount = 0, viewCount = 0} = useCreatorStats(channelID);
+    const {videos = null} = useCreatorVideos(channelID, 15);
 
     return (
         <Fragment>
@@ -27,70 +37,60 @@ function Creator(): ReactNode {
                         containerStyle: styles.creator,
                         nameStyle: styles.creatorName,
                         imageStyle: styles.creatorImage,
-                    }} 
+                    }}
                     name={name}
                     tag={tag}
                     cover={cover}
                 />
                 <View style={styles.statsContainer}>
-                    <View style={styles.stat}>
-                        <Text style={styles.stateValue}>{formatNumber(subCount)}</Text>
-                        <Text style={styles.stateTitle}>Subscribers</Text>
-                    </View>
-                     <View style={styles.stat}>
-                        <Text style={styles.stateValue}>{formatNumber(videoCount, 1)}</Text>
-                        <Text style={styles.stateTitle}>Videos</Text>
-                    </View>
-                     <View style={styles.stat}>
-                        <Text style={styles.stateValue}>{formatNumber(viewCount)}</Text>
-                        <Text style={styles.stateTitle}>Views</Text>
-                    </View>
+                    <Stat title="Subscribers" value={subscriberCount} />
+                    <Stat title="Videos" value={videoCount} deci={1} />
+                    <Stat title="Views" value={viewCount} />
                 </View>
-                {about ?
+                {about ? (
                     <View style={styles.aboutContainer}>
                         <Text style={styles.aboutTitle}>About</Text>
-                        {about.map((text, i) => 
-                            <Text key={i} style={styles.aboutText}>{text}</Text>
-                        )}
-                    </View> : null 
-                }
-            
+                        {about.map((text, i) => (
+                            <Text key={i} style={styles.aboutText}>
+                                {text}
+                            </Text>
+                        ))}
+                    </View>
+                ) : null}
+
                 <Carousel
                     style={{containerStyle: {marginBottom: 25}}}
                     data={links}
-                    renderItem={({item}) => 
-                        <SocialMedia 
-                            title={item.title}
-                            tag={item.tag}
-                            type={item.type}
-                            link={item.link}
-                        />
-                    }
-                    keyExtractor={item => item.id}
+                    renderItem={({item}) => (
+                        <SocialMedia title={item.title} tag={item.tag} type={item.type} link={item.link} />
+                    )}
+                    keyExtractor={(item) => item.id}
                 />
-                <Carousel 
-                    style={{
-                        containerStyle: {marginBottom: 25},
-                        titleStyle: {marginBottom: 15, fontSize: 18}
-                    }}
-                    title="Last videos"
-                    data={videos}
-                    renderItem={({item}) => {
-                        const {snippet} = item;
-  
-                        return (
-                            <Video 
-                                title={snippet.title}
-                                cover={snippet.thumbnails.high.url}
-                            />
-                        );
-                    }
-                    }
-                    keyExtractor={item => item.id.videoId}
-                    snapToAlignment={"start"}
-                    snapToInterval={315}
-                    decelerationRate={"fast"}
-                />
+                {videos ? (
+                    <Carousel
+                        style={{
+                            containerStyle: {marginBottom: 25},
+                            titleStyle: {marginBottom: 15, fontSize: 18},
+                        }}
+                        title="Last videos"
+                        data={videos}
+                        renderItem={({item}) => {
+                            const {snippet, id} = item;
+
+                            return (
+                                <Video
+                                    title={snippet.title}
+                                    cover={snippet.thumbnails.high.url}
+                                    onPress={() => openLink(`https://www.youtube.com/watch?v=${id.videoId}`)}
+                                />
+                            );
+                        }}
+                        keyExtractor={(item) => item.id.videoId}
+                        snapToAlignment={"start"}
+                        snapToInterval={315}
+                        decelerationRate={"fast"}
+                    />
+                ) : null}
             </Content>
         </Fragment>
     );

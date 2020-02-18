@@ -27,12 +27,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center'
     },
-    stateValue: {
+    statValue: {
         color: stylevars.textColor,
         fontSize: 16,
         fontWeight: 'bold',
     },
-    stateTitle: {
+    statTitle: {
         color: stylevars.lighterTextColor,
     },
     aboutContainer: {

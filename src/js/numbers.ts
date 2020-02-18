@@ -3,18 +3,22 @@ const formats = {
     billion: 1000000000,
     million: 1000000,
     thousand: 1000,
-}
+};
 
-export const formatNumber = (num: number, deci: number = 2) => {
+/**
+ * Make number readable
+ */
+export const formatNumber = (num: number, deci: number) => {
     const {trillion, billion, million, thousand} = formats;
 
     let value = num;
     let suffix = "";
+    const round = Math.pow(10, deci);
 
     if (num >= trillion) {
         value = num / trillion;
         suffix = "T";
-    }else if (num >= billion){
+    } else if (num >= billion) {
         value = num / billion;
         suffix = "B";
     } else if (num >= million) {
@@ -23,9 +27,12 @@ export const formatNumber = (num: number, deci: number = 2) => {
     } else if (num > thousand) {
         value = num / thousand;
         suffix = "K";
-    }else {
+    } else {
         deci = 0;
     }
 
-    return Number(Number(value).toFixed(deci)) + suffix;
-}
+    return {
+        number: Number(Math.floor(value * round) / round),
+        suffix,
+    };
+};

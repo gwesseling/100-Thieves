@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import stylevars from '_STYLES/stylevars';
+import {StyleSheet} from "react-native";
+import stylevars from "_STYLES/stylevars";
 
 const styles = StyleSheet.create({
     main: {
@@ -12,10 +12,18 @@ const styles = StyleSheet.create({
     pageTitle: {
         color: stylevars.textColor,
         marginBottom: 10,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         fontSize: 16,
-        textTransform: 'uppercase'
-    }
+        textTransform: "uppercase",
+    },
+    drawer: {
+        backgroundColor: stylevars.primaryColor,
+    },
+    drawerLabel: {
+        fontSize: 16,
+        textTransform: "uppercase",
+        fontWeight: "bold",
+    },
 });
 
 export default styles;

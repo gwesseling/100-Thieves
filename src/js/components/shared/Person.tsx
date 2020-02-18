@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react';
-import {View,Text, Image} from 'react-native';
+import {View,Text, Image, TouchableWithoutFeedback} from 'react-native';
 import personStyle from '_STYLES/components/person';
 
 type Props = {
@@ -11,15 +11,17 @@ type Props = {
 }
 
 function Person(props: Props): ReactNode {
-    const {cover, name, tag, styles = {}} = props;
+    const {cover, name, tag, styles = {}, onPress = null} = props;
     const {containerStyle, imageStyle, nameStyle, tagStyle} = styles;
 
     return (
-        <View style={[personStyle.person, containerStyle]}>
-            <Image style={[personStyle.personImage, imageStyle]} source={cover} />
-            <Text style={[personStyle.personName, nameStyle]}>{name}</Text>
-            {tag ? <Text style={[personStyle.personTag, tagStyle]}>{tag}</Text> : null}
-        </View>
+        <TouchableWithoutFeedback onPress={onPress}>
+            <View style={[personStyle.person, containerStyle]}>
+                <Image style={[personStyle.personImage, imageStyle]} source={cover} />
+                <Text style={[personStyle.personName, nameStyle]}>{name}</Text>
+                {tag ? <Text style={[personStyle.personTag, tagStyle]}>{tag}</Text> : null}
+            </View>
+        </TouchableWithoutFeedback>
     );
 }
 

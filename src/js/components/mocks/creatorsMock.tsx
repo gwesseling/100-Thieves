@@ -14,7 +14,7 @@ import mako from '_ASSETS/image/creators/mako.jpg';
 
 export const creatorsMock = [
     {
-        id: '0',
+        id: 0,
         name: 'Noah',
         tag: '@NoahJ456',
         cover: noahj,
@@ -52,7 +52,7 @@ export const creatorsMock = [
         channelID: 'UCP9tAErY_RlX4RFKssE4ogg'
     },
     {
-        id: '1',
+        id: 1,
         name: 'Jack',
         tag: '@CouRageJD',
         cover: courage,
@@ -96,7 +96,7 @@ export const creatorsMock = [
         channelID: 'UCrgTEmBuoObZiEXvZ6r3PQg'
     },
     {
-        id: '2',
+        id: 2,
         name: 'Rea',
         tag: '@Valkyrae',
         cover: valkyrae,
@@ -129,10 +129,13 @@ export const creatorsMock = [
         channelID: 'UCWxlUwW9BgGISaakjGM37aw'
     },
     {
-        id: '3',       
+        id: 3,       
         name: 'Nadeshot',
         tag: '@Nadeshot',
         cover: nadeshot,
+        about: [
+            "Matt Haag, best known by his handle ‘Nadeshot,’ is a former professional ‘Call of Duty’ player. He is the founder and CEO of the popular eSports team, ‘100 Thieves."
+        ],
         links: [
             {
                 id: '0',
@@ -168,43 +171,43 @@ export const creatorsMock = [
         channelID: 'UCs3l6DsCu9ZOXkJkvskEsrQ',
     },
     {
-        id: '4',        
+        id: 4,        
         name: 'Brooke',
         tag: '@brookeab',
         cover: brooke,
     },
     {
-        id: '5',        
+        id: 5,        
         name: 'Moe',
         tag: '@Yassuo',
         cover: moe,
     },
     {
-        id: '6',        
+        id: 6,        
         name: 'Connor',
         tag: '@Gigz',
         cover: gigz,
     },
     {
-        id: '7',        
+        id: 7,        
         name: 'Brandon',
         tag: '@Avalanche100T',
         cover: avalanche,
     },
     {
-        id: '8',        
+        id: 8,        
         name: 'Yan',
         tag: '@Classify',
         cover: classy,
     },
     {
-        id: '9',       
+        id: 9,       
         name: 'Erind',
         tag: '@Froste',
         cover: froste,
     },
     {
-        id: '10',        
+        id: 10,        
         name: 'Mako',
         tag: '@Mako',
         cover: mako,

@@ -5,8 +5,11 @@ import {creatorsMock} from '_COMPONENTS/mocks/creatorsMock';
 import Person from '_SHARED/Person';
 import Topbar from '_SHARED/Topbar';
 import Content from '_SHARED/Content';
+import {useNavigation} from '@react-navigation/native';
 
 function Creators(): ReactNode {
+    const {navigate} = useNavigation();
+
     return (
         <Fragment>
             <Topbar />
@@ -23,6 +26,7 @@ function Creators(): ReactNode {
                             name={item.name}
                             tag={item.tag}
                             cover={item.cover}
+                            onPress={() => navigate("Creator", {id: item.id})}
                         />
                     }
                     keyExtractor={item => item.id}

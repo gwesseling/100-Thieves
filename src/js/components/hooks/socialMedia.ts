@@ -1,4 +1,4 @@
-import {View, Text, TouchableNativeFeedback, Linking} from 'react-native';
+import {View, Text, TouchableNativeFeedback} from 'react-native';
 import {faLink} from '@fortawesome/free-solid-svg-icons'
 import {faTwitter, faYoutube, faInstagram, faTwitch, faFacebookF, faDiscord, faSnapchatGhost} from '@fortawesome/free-brands-svg-icons';
 
@@ -16,7 +16,7 @@ export enum SOCIAL_MEDIA_TYPES {
 export default function useSocialMedia() {
 
     const getIconStyle = (type) => {
-        // TODO: maybe move to json file?
+        // TODO: maybe move to json file or function?
         switch(type) {
             case SOCIAL_MEDIA_TYPES.twitter:
                 return {color: '#1DA1F2', icon: faTwitter};
@@ -37,16 +37,7 @@ export default function useSocialMedia() {
         }
     }
 
-    const openLink = (link: string) => {
-        if (link) {
-            Linking.openURL(link).catch(() => {
-                // TODO: throw toast/ notification
-            });
-        }
-    }
-
     return {
         getIconStyle,
-        openLink
     }
 }

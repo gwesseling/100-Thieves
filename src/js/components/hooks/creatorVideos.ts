@@ -1,17 +1,18 @@
-import React, {useEffect, useState} from 'react';
-import request from '_LIBS/request';
+import React, {useEffect, useState} from "react";
+import useFetch from "react-fetch-hook";
 import Config from "react-native-config";
 
-export default function useCreatorVideos(id: string) {
-    const [videos, setVideos] = useState(null);
-
-    useEffect(() => {
-        request(`${Config.YT_URL}/search?part=snippet&channelId=${id}&maxResults=10&order=date&type=video&key=${Config.YT_KEY}`)
-        .then(({items}) => setVideos(items))
-        .catch((err) => console.log(err));
-    }, []);
+/**
+ * Fetch creator videos from YT API
+ */
+export default function useCreatorVideos(id: string, amount: number) {
+    const {data, isLoading} = useFetch(
+        // eslint-disable-next-line max-len
+        `${Config.YT_URL}/search?part=snippet&channelId=${id}&maxResults=${amount}&order=date&type=video&key=${Config.YT_KEY}`,
+    );
 
     return {
-        videos,
-    }
+        videos: data?.items,
+        isLoading,
+    };
 }

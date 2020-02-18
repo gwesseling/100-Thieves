@@ -2,6 +2,7 @@ import React, {ReactNode} from 'react';
 import {View, Text, TouchableNativeFeedback} from 'react-native';
 import useSocialMedia, {SOCIAL_MEDIA_TYPES} from '_HOOKS/socialMedia';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {openLink} from '_LIBS/linking';
 
 type Props = {
     name: string,
@@ -12,7 +13,7 @@ type Props = {
 //TODO: add verify check?
 function SocialMedia(props: Props): ReactNode {
     const {title, tag, type, link} = props;
-    const {getIconStyle, openLink} = useSocialMedia();
+    const {getIconStyle} = useSocialMedia();
     const {icon, color} = getIconStyle(type);
 
     return (

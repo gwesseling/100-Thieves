@@ -1,16 +1,23 @@
-import React, {ReactNode, useContext} from 'react';
-import {View, Image, TouchableNativeFeedback} from 'react-native';
+import React, {ReactNode, useContext} from "react";
+import {View, Image, TouchableNativeFeedback} from "react-native";
 import {Link} from "react-router-native";
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faBars, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
-import styles from '_STYLES/components/topbar';
-import {NavigationContext} from 'react-navigation';
+import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
+import {faBars, faShoppingCart} from "@fortawesome/free-solid-svg-icons";
+import styles from "_STYLES/components/topbar";
+import {DrawerContext} from "_COMPONENTS/providers/drawer";
 
-import logo from '_ASSETS/image/logo.png';
+import logo from "_ASSETS/image/logo.png";
 
-function Topbar(props): ReactNode {
-    const {openDrawer} = useContext(NavigationContext);
+interface Props {
+    flaot?: boolean;
+}
+
+/**
+ * Topbar component
+ */
+function Topbar(props: Props): ReactNode {
     const {float = false} = props;
+    const {openDrawer} = useContext(DrawerContext);
 
     return (
         <View style={[styles.topbar, float ? styles.topbarActive : {}]}>
