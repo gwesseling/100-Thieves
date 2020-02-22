@@ -1,7 +1,7 @@
 // TODO: split up component
 /* eslint-disable max-lines-per-function */
 import React, {ReactNode, Fragment} from "react";
-import {View, Text, Image} from "react-native";
+import {View, Text, Image, Dimensions} from "react-native";
 import styles from "_STYLES/pages/creator";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
@@ -27,6 +27,9 @@ function Creator(): ReactNode {
     const {name, tag, cover, about, links, channelID} = creatorsMock[id];
     const {subscriberCount = 0, videoCount = 0, viewCount = 0} = useCreatorStats(channelID);
     const {videos = null} = useCreatorVideos(channelID, 15);
+
+    const {width} = Dimensions.get("window");
+    const videoWidth = (width / 100) * 80;
 
     return (
         <Fragment>
@@ -79,6 +82,7 @@ function Creator(): ReactNode {
 
                             return (
                                 <Video
+                                    style={{width: videoWidth, height: (videoWidth / 16) * 9}}
                                     title={snippet.title}
                                     cover={snippet.thumbnails.high.url}
                                     onPress={() => openLink(`https://www.youtube.com/watch?v=${id.videoId}`)}
@@ -87,7 +91,7 @@ function Creator(): ReactNode {
                         }}
                         keyExtractor={(item) => item.id.videoId}
                         snapToAlignment={"start"}
-                        snapToInterval={315}
+                        snapToInterval={videoWidth + 15}
                         decelerationRate={"fast"}
                     />
                 ) : null}

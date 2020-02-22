@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 
+// TODO: make is ease more (slow down at the end)
 /**
  * Handles count up animation
  */
@@ -13,7 +14,7 @@ export default function useCountUpAnimation(val = 0, deci) {
      */
     const setTimeoutCounter = () => {
         // TODO: rename variables
-        let addon = val / 62.5;
+        let addon = val / 31.25;
 
         // check if addon is lower the rest value of val - current count
         if (val - countRef.current < addon) {

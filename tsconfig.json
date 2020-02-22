@@ -1,31 +1,27 @@
 {
     "compilerOptions": {
-      "allowJs": true,
-      "allowSyntheticDefaultImports": true,
-      "esModuleInterop": true,
-      "isolatedModules": true,
-      "jsx": "react",
-      "lib": ["es6"],
-      "moduleResolution": "node",
-      "noEmit": true,
-      "noEmitOnError": true,
-      "strict": true,
-      "target": "esnext",
-      "baseUrl": ".",
-      "paths": {
-          "*": ["src/*"],
-          "_LIBS/*": ["src/js/*"],
-          "_ASSETS/*": ["src/assets/*"],
-          "_COMPONENTS/*": ["src/js/components/*"],
-          "_STYLES/*": ["src/style/*"],
-          "_SHARED/*": ["src/js/components/shared/*"],
-          "_HOOKS/*": ["src/js/components/hooks/*"]
-      }
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "jsx": "react",
+        "lib": ["es6"],
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noEmitOnError": true,
+        "strict": true,
+        "target": "esnext",
+        "baseUrl": ".",
+        "paths": {
+            "*": ["src/*"],
+            "_LIBS/*": ["src/js/*"],
+            "_ENUMS/*": ["src/js/enums/*"],
+            "_ASSETS/*": ["src/assets/*"],
+            "_COMPONENTS/*": ["src/js/components/*"],
+            "_STYLES/*": ["src/style/*"],
+            "_SHARED/*": ["src/js/components/shared/*"],
+            "_HOOKS/*": ["src/js/components/hooks/*"]
+        }
     },
-    "exclude": [
-      "node_modules",
-      "babel.config.js",
-      "metro.config.js",
-      "jest.config.js"
-    ]
+    "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }
