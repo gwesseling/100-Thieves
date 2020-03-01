@@ -2,6 +2,7 @@
 /* eslint-disable max-lines-per-function */
 import React, {ReactNode, Fragment} from "react";
 import {View, Text, Image, Dimensions} from "react-native";
+import {decodeHTML} from "entities";
 import styles from "_STYLES/pages/creator";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
@@ -83,7 +84,7 @@ function Creator(): ReactNode {
                             return (
                                 <Video
                                     style={{width: videoWidth, height: (videoWidth / 16) * 9}}
-                                    title={snippet.title}
+                                    title={decodeHTML(snippet.title)}
                                     cover={snippet.thumbnails.high.url}
                                     onPress={() => openLink(`https://www.youtube.com/watch?v=${id.videoId}`)}
                                 />
