@@ -10,7 +10,7 @@ export default function useCreatorStats(id: string) {
     const statistics = data?.items[0].statistics || {};
 
     return {
-        isLoading: isLoading,
+        isLoading,
         ...statistics,
     };
 }

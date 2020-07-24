@@ -4,7 +4,7 @@ import React, {useState, useEffect, useRef} from "react";
 /**
  * Handles count up animation
  */
-export default function useCountUpAnimation(val = 0, deci) {
+export default function useCountUpAnimation(animation = false, val = 0, deci) {
     const [count, setCount] = useState(0.0);
     const countRef = useRef(count);
     let timeout;
@@ -44,8 +44,10 @@ export default function useCountUpAnimation(val = 0, deci) {
     };
 
     useEffect(() => {
-        if (val > 0) {
+        if (val > 0 && animation) {
             startAnimation();
+        } else {
+            setCount(val);
         }
     }, [val]);
 

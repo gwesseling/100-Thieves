@@ -1,21 +1,24 @@
-import React, {ReactNode, Fragment} from 'react';
-import {View, Text, Image, FlatList} from 'react-native';
-import styles from '_STYLES/pages/players';
-import Carousel from '_SHARED/Carousel';
-import {leaguePlayersMock, csPlayersMock, fortnitePlayersMock, lolaPlayersMock} from '_COMPONENTS/mocks/playersMock';
-import Person from '_SHARED/Person';
-import Topbar from '_SHARED/Topbar';
-import Content from '_SHARED/Content';
+import React, {ReactNode, Fragment} from "react";
+import {View, Text, Image, FlatList} from "react-native";
+import styles from "_STYLES/pages/players";
+import Carousel from "_SHARED/Carousel";
+import {leaguePlayersMock, csPlayersMock, fortnitePlayersMock, lolaPlayersMock} from "_COMPONENTS/mocks/playersMock";
+import Person from "_SHARED/Person";
+import Topbar from "_SHARED/Topbar";
+import Content from "_SHARED/Content";
 
+/**
+ * Players page
+ */
 function Players(): ReactNode {
     return (
         <Fragment>
             <Topbar />
             <Content style={styles.players}>
-                <Carousel 
+                <Carousel
                     title="LEAGUE OF LEGENDS"
                     data={leaguePlayersMock}
-                    renderItem={({item, index}) =>
+                    renderItem={({item, index}) => (
                         <Person
                             styles={{containerStyle: styles.player}}
                             imageStyle={styles.playerImage}
@@ -23,16 +26,16 @@ function Players(): ReactNode {
                             tag={item.tag}
                             cover={item.cover}
                         />
-                    }
-                    keyExtractor={item => item.id}
+                    )}
+                    keyExtractor={(item) => item.id}
                     snapToAlignment={"start"}
                     snapToInterval={135}
                     decelerationRate={"fast"}
                 />
-                <Carousel 
+                <Carousel
                     title="COUNTER STRIKE: GLOBALE OFFENSIVE"
                     data={csPlayersMock}
-                    renderItem={({item, index}) =>
+                    renderItem={({item, index}) => (
                         <Person
                             styles={{containerStyle: styles.player}}
                             imageStyle={styles.playerImage}
@@ -40,32 +43,32 @@ function Players(): ReactNode {
                             tag={item.tag}
                             cover={item.cover}
                         />
-                    }
-                    keyExtractor={item => item.id}
+                    )}
+                    keyExtractor={(item) => item.id}
                     snapToAlignment={"start"}
                     snapToInterval={135}
                     decelerationRate={"fast"}
                 />
-                <Carousel 
+                <Carousel
                     title="FORTNITE"
                     data={fortnitePlayersMock}
-                    renderItem={({item, index}) =>
+                    renderItem={({item, index}) => (
                         <Person
                             styles={{containerStyle: styles.player}}
                             imageStyle={styles.playerImage}
                             name={item.name}
                             cover={item.cover}
                         />
-                    }
-                    keyExtractor={item => item.id}
+                    )}
+                    keyExtractor={(item) => item.id}
                     snapToAlignment={"start"}
                     snapToInterval={135}
                     decelerationRate={"fast"}
                 />
-                <Carousel 
+                <Carousel
                     title="LEAGUE OF LEGENDS ACADEMY"
                     data={lolaPlayersMock}
-                    renderItem={({item, index}) =>
+                    renderItem={({item, index}) => (
                         <Person
                             styles={{containerStyle: styles.player}}
                             imageStyle={styles.playerImage}
@@ -73,8 +76,8 @@ function Players(): ReactNode {
                             tag={item.tag}
                             cover={item.cover}
                         />
-                    }
-                    keyExtractor={item => item.id}
+                    )}
+                    keyExtractor={(item) => item.id}
                     snapToAlignment={"start"}
                     snapToInterval={135}
                     decelerationRate={"fast"}

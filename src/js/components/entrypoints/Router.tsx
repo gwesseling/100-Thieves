@@ -20,12 +20,19 @@ const DrawerNav = createDrawerNavigator();
  * Router
  */
 function Router() {
+    /**
+     * Render drawer
+     */
+    function renderDrawer(props) {
+        return <Drawer {...props} />;
+    }
+
     return (
         <NavigationContainer>
             <DrawerNav.Navigator
-                initialRouteName="Home"
+                initialRouteName="Player"
                 backBehavior="history"
-                drawerContent={(props) => <Drawer {...props} />}
+                drawerContent={renderDrawer}
                 overlayColor={"rgba(0, 0, 0, .3)"}
             >
                 {ROUTES.map(({title, component}, i) => (

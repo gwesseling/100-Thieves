@@ -1,13 +1,13 @@
-import {StyleSheet} from 'react-native';
-import stylevars from '_STYLES/stylevars';
+import {StyleSheet} from "react-native";
+import stylevars from "_STYLES/stylevars";
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     sectionText: {
         color: stylevars.textColor,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         fontSize: 16,
         marginBottom: 5,
-    }
+    },
 });
 
-export default style;
+export default styles;

@@ -1,6 +1,14 @@
-import {View, Text, TouchableNativeFeedback} from 'react-native';
-import {faLink} from '@fortawesome/free-solid-svg-icons'
-import {faTwitter, faYoutube, faInstagram, faTwitch, faFacebookF, faDiscord, faSnapchatGhost} from '@fortawesome/free-brands-svg-icons';
+import {View, Text, TouchableNativeFeedback} from "react-native";
+import {faLink} from "@fortawesome/free-solid-svg-icons";
+import {
+    faTwitter,
+    faYoutube,
+    faInstagram,
+    faTwitch,
+    faFacebookF,
+    faDiscord,
+    faSnapchatGhost,
+} from "@fortawesome/free-brands-svg-icons";
 
 export enum SOCIAL_MEDIA_TYPES {
     twitter,
@@ -13,31 +21,36 @@ export enum SOCIAL_MEDIA_TYPES {
     website,
 }
 
+/**
+ * Handle social media methods
+ */
 export default function useSocialMedia() {
-
+    /**
+     * Get social media icon style
+     */
     const getIconStyle = (type) => {
         // TODO: maybe move to json file or function?
-        switch(type) {
+        switch (type) {
             case SOCIAL_MEDIA_TYPES.twitter:
-                return {color: '#1DA1F2', icon: faTwitter};
+                return {color: "#1DA1F2", icon: faTwitter};
             case SOCIAL_MEDIA_TYPES.youtube:
-                return {color: '#FF3333', icon: faYoutube};
+                return {color: "#FF3333", icon: faYoutube};
             case SOCIAL_MEDIA_TYPES.instagram:
-                return {color: 'white', icon: faInstagram};
+                return {color: "white", icon: faInstagram};
             case SOCIAL_MEDIA_TYPES.twitch:
-                return {color: '#9147FF', icon: faTwitch};
+                return {color: "#9147FF", icon: faTwitch};
             case SOCIAL_MEDIA_TYPES.facebook:
-                return {color: '#2D4474', icon: faFacebookF};
+                return {color: "#2D4474", icon: faFacebookF};
             case SOCIAL_MEDIA_TYPES.discord:
-                return {color: '#7289DA', icon: faDiscord};
+                return {color: "#7289DA", icon: faDiscord};
             case SOCIAL_MEDIA_TYPES.snapchat:
-                return {color: '#CCCA00', icon: faSnapchatGhost}
+                return {color: "#CCCA00", icon: faSnapchatGhost};
             case SOCIAL_MEDIA_TYPES.link:
-                return {color: 'white', icon: faLink};
+                return {color: "white", icon: faLink};
         }
-    }
+    };
 
     return {
         getIconStyle,
-    }
+    };
 }

@@ -5,8 +5,11 @@ import stylevars from "_STYLES/stylevars";
 import LinearGradient from "react-native-linear-gradient";
 
 interface Props {
+    style: Record<string, string | number>;
     title: string;
     image: string;
+    cover: string;
+    onPress: () => void;
 }
 
 /**

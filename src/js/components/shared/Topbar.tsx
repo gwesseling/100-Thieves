@@ -10,7 +10,7 @@ import {useNavigation} from "@react-navigation/native";
 import logo from "_ASSETS/image/logo.png";
 
 interface Props {
-    flaot?: boolean;
+    float?: boolean;
 }
 
 /**
@@ -19,7 +19,6 @@ interface Props {
 function Topbar(props: Props): ReactNode {
     const {float = false} = props;
     const {openDrawer} = useNavigation();
-    // const {openDrawer} = useContext(DrawerContext);
 
     return (
         <View style={[styles.topbar, float ? styles.topbarActive : {}]}>

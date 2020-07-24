@@ -4,6 +4,7 @@ import Teams from "_COMPONENTS/pages/Teams";
 import Creator from "_COMPONENTS/pages/Creator";
 import Creators from "_COMPONENTS/pages/Creators";
 import Players from "_COMPONENTS/pages/Players";
+import Player from "_COMPONENTS/pages/Player";
 
 export const ROUTES = [
     {
@@ -19,16 +20,21 @@ export const ROUTES = [
         component: Teams,
     },
     {
+        title: "Creators",
+        component: Creators,
+    },
+    {
         title: "Creator",
         component: Creator,
         isHidden: true,
     },
     {
-        title: "Creators",
-        component: Creators,
+        title: "Players",
+        component: Players,
     },
     {
-        title: "Players",
-        component: Teams,
+        title: "Player",
+        component: Player,
+        isHidden: true,
     },
 ];

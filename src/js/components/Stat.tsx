@@ -6,19 +6,20 @@ import useCountUpAnimation from "_HOOKS/countUpAnimation";
 
 interface Props {
     title: string;
-    value: number | string;
+    deci: number;
+    value: number;
 }
 
 /**
  * Stat component
  */
 function Stat(props: Props) {
-    const {title, deci = 2, value} = props;
+    const {style = {}, animation, title, deci = 2, value} = props;
     const {number, suffix} = formatNumber(value, deci);
-    const {count} = useCountUpAnimation(number, deci);
+    const {count} = useCountUpAnimation(animation, number, deci);
 
     return (
-        <View style={styles.stat}>
+        <View style={[styles.stat, style]}>
             <Text style={styles.statValue}>
                 {count}
                 {suffix}

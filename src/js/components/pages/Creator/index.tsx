@@ -11,23 +11,22 @@ import Carousel from "_SHARED/Carousel";
 import SocialMedia from "_COMPONENTS/SocialMedia";
 import Video from "_COMPONENTS/Video";
 import Stat from "_COMPONENTS/Stat";
-import {creatorsMock} from "_COMPONENTS/mocks/creatorsMock";
 import {openLink} from "_LIBS/linking";
 import {useRoute} from "@react-navigation/native";
+import useCreator from "./containerHook";
 
-import useCreatorStats from "_HOOKS/creatorStats";
-import useCreatorVideos from "_HOOKS/creatorVideos";
+import useCreatorVideos from "./hooks/creatorVideos";
+import useCreatorStats from "./hooks/creatorStats";
 
 // TODO: section and formatNumber component.
 /**
  * Creator component
  */
 function Creator(): ReactNode {
-    const route = useRoute();
-    const id = route.params?.id || 0;
-    const {name, tag, cover, about, links, channelID} = creatorsMock[id];
+    const {params} = useRoute();
+    const {name, tag, cover, about, links, channelID} = useCreator(params?.id, 15);
+    const {videos} = useCreatorVideos(channelID);
     const {subscriberCount = 0, videoCount = 0, viewCount = 0} = useCreatorStats(channelID);
-    const {videos = null} = useCreatorVideos(channelID, 15);
 
     const {width} = Dimensions.get("window");
     const videoWidth = (width / 100) * 80;
@@ -47,9 +46,9 @@ function Creator(): ReactNode {
                     cover={cover}
                 />
                 <View style={styles.statsContainer}>
-                    <Stat title="Subscribers" value={subscriberCount} />
-                    <Stat title="Videos" value={videoCount} deci={1} />
-                    <Stat title="Views" value={viewCount} />
+                    <Stat title="Subscribers" animation value={subscriberCount} />
+                    <Stat title="Videos" animation value={videoCount} deci={1} />
+                    <Stat title="Views" animation value={viewCount} />
                 </View>
                 {about ? (
                     <View style={styles.aboutContainer}>

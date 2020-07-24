@@ -1,28 +1,31 @@
-import React, {ReactNode} from 'react';
-import {View, FlatList, Text} from 'react-native';
-import styles from '_STYLES/components/carousel';
+import React, {ReactNode} from "react";
+import {View, FlatList, Text} from "react-native";
+import styles from "_STYLES/components/carousel";
 
-type Props = {
-    title: string,
-    data: Array<Object>,
-    renderItem: (item: Object, index: number) => ReactNode,
-    keyExtractor: (item: Object) => string,
+interface Props {
+    title: string;
+    data: Record<string, string | number>[];
+    renderItem: (item: Record<string, string | number>, index: number) => ReactNode;
+    keyExtractor: (item: Record<string, string | number>) => string;
+    style?: {
+        containerStyle: Record<string, string | number>;
+        titleStyle: Record<string, string | number>;
+    };
 }
 
-function Section(props: Props): ReactNode {
+/**
+ * Carousel component
+ */
+function Carousel(props: Props): ReactNode {
     const {title, style = {}, ...restProps} = props;
     const {containerStyle, titleStyle} = style;
 
     return (
         <View style={[containerStyle]}>
             {title && <Text style={[styles.sectionText, titleStyle]}>{title}</Text>}
-            <FlatList 
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                {...restProps}
-            />
+            <FlatList horizontal showsHorizontalScrollIndicator={false} {...restProps} />
         </View>
     );
 }
 
-export default Section;
+export default Carousel;
