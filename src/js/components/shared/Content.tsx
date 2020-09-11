@@ -4,7 +4,7 @@ import generalStyles from "_STYLES/general";
 
 interface Props {
     title?: string;
-    style?: Record<string, any>;
+    style?: Record<string, string | number>;
     children: ReactNode;
     withoutScrollView: boolean;
 }

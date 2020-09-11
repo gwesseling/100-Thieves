@@ -16,7 +16,6 @@ import Game from "_SHARED/Game";
  */
 function Player(): ReactNode {
     const {name, tag, cover, links} = playersMock[0];
-
     const {width} = Dimensions.get("window");
     const videoWidth = (width / 100) * 80;
 

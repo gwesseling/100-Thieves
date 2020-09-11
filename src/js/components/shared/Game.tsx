@@ -8,7 +8,6 @@ import Stat from "_COMPONENTS/Stat";
  */
 function Game(props): ReactNode {
     const {team, opponent} = props;
-    console.log(props, styles);
     return (
         <View style={styles.game}>
             <View style={styles.header}>

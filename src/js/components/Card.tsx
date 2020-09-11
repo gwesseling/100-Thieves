@@ -18,6 +18,7 @@ interface Props {
  */
 function Card(props: Props): ReactNode {
     const {height, isActive, title, cover, video, description, style = {}} = props;
+    const cardWidth = (height / 9) * 16;
 
     return (
         <View style={[styles.card, style]}>
@@ -29,11 +30,11 @@ function Card(props: Props): ReactNode {
                     disableFocus
                     repeat
                     resizeMode="stretch"
-                    style={{height: height, width: (height / 9) * 16}}
+                    style={{height, width: cardWidth}}
                 />
             ) : null}
 
-            {cover ? <Image style={{height: height, width: (height / 9) * 16}} source={{uri: cover}} /> : null}
+            {cover ? <Image style={{height, width: cardWidth}} source={{uri: cover}} /> : null}
 
             <LinearGradient
                 style={[{height}, styles.cardOverlay]}

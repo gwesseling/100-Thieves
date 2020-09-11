@@ -1,8 +1,8 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet} from "react-native";
 
 const style = StyleSheet.create({
     players: {
-        paddingRight: 0
+        paddingRight: 0,
     },
     player: {
         padding: 10,
@@ -10,7 +10,7 @@ const style = StyleSheet.create({
     playerImage: {
         height: 115,
         width: 115,
-    }
+    },
 });
 
 export default style;

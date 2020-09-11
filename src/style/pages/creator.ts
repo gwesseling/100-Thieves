@@ -1,12 +1,12 @@
-import {StyleSheet} from 'react-native';
-import stylevars from '_STYLES/stylevars';
+import {StyleSheet} from "react-native";
+import stylevars from "_STYLES/stylevars";
 
 const styles = StyleSheet.create({
     pageContainer: {
-        paddingRight: 0
+        paddingRight: 0,
     },
     creator: {
-        marginBottom: 0
+        marginBottom: 0,
     },
     creatorName: {
         fontSize: 20,
@@ -19,18 +19,18 @@ const styles = StyleSheet.create({
     },
     statsContainer: {
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: "row",
         marginBottom: 25,
         paddingRight: 15,
     },
     stat: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: "center",
     },
     statValue: {
         color: stylevars.textColor,
         fontSize: 16,
-        fontWeight: 'bold',
+        fontWeight: "bold",
     },
     statTitle: {
         color: stylevars.lighterTextColor,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     aboutTitle: {
         color: stylevars.textColor,
         fontSize: 18,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         marginBottom: 10,
     },
     aboutText: {
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         lineHeight: 18,
         marginBottom: 25,
-    }
+    },
 });
 
 export default styles;

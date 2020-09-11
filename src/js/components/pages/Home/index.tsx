@@ -4,32 +4,26 @@ import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
 import Card from "_COMPONENTS/Card";
 import {itemMock} from "_COMPONENTS/mocks/homeMock";
+import useHome from "./containerHook";
+import styles from "_STYLES/pages/home";
 
 /**
  * Home page
  */
 function Home(props): ReactNode {
-    const [selected, setSelected] = useState<number>(0);
+    const {selected, onScrollEnd} = useHome();
     const {height, width} = useWindowDimensions();
-
-    /**
-     * Test
-     */
-    function test({nativeEvent}) {
-        const test = Math.floor(nativeEvent.contentOffset.y / height);
-        setSelected(test);
-    }
 
     return (
         <Fragment>
-            <Content style={{paddingTop: 0, paddingLeft: 0, paddingRight: 0}} withoutScrollView>
+            <Content style={styles.content} withoutScrollView>
                 <Topbar float />
                 <FlatList
                     snapToAlignment={"start"}
                     snapToInterval={height}
                     decelerationRate={"fast"}
                     showsVerticalScrollIndicator={false}
-                    onMomentumScrollEnd={test}
+                    onMomentumScrollEnd={onScrollEnd}
                     data={itemMock}
                     renderItem={({item, index}) => (
                         <Card

@@ -14,7 +14,7 @@ function Teams(): ReactNode {
             <Topbar />
             <Content title="Teams">
                 {teamsMock.map(({name, cover}, i) => {
-                    const black = i % 2 != 0 ? style.cardOverlayBlack : {};
+                    const black = i % 2 != 0 ? style.cardOverlayBlack : null;
 
                     return (
                         <View style={style.card} key={i}>
