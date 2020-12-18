@@ -4,6 +4,7 @@ import style from "_STYLES/pages/teams";
 import {teamsMock} from "_COMPONENTS/mocks/teamsMock";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
+import TeamCard from "_COMPONENTS/TeamCard";
 
 /**
  * Teams page
@@ -16,13 +17,7 @@ function Teams(): ReactNode {
                 {teamsMock.map(({name, cover}, i) => {
                     const black = i % 2 != 0 ? style.cardOverlayBlack : null;
 
-                    return (
-                        <View style={style.card} key={i}>
-                            <Image style={style.cardImage} source={cover} />
-                            <View style={[style.cardOverlay, black]} />
-                            <Text style={style.cardText}>{name}</Text>
-                        </View>
-                    );
+                    return <TeamCard key={i} name={name} cover={cover} overlayStyle={black} />;
                 })}
             </Content>
         </Fragment>

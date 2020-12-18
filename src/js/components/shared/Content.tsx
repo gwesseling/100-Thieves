@@ -14,16 +14,21 @@ interface Props {
  */
 function Content(props: Props): ReactNode {
     const {style = {}, title, children, withoutScrollView} = props;
+    const contentStyling = [generalStyles.main, style];
 
     return (
-        <View style={[generalStyles.main, style]}>
+        <View style={generalStyles.container}>
             {title && <Text style={generalStyles.pageTitle}>{title}</Text>}
-            {!withoutScrollView ? (
-                <ScrollView contentInsetAdjustmentBehavior="automatic" showsVerticalScrollIndicator={false}>
+            {withoutScrollView ? (
+                <View style={contentStyling}>{children}</View>
+            ) : (
+                <ScrollView
+                    style={contentStyling}
+                    contentInsetAdjustmentBehavior="automatic"
+                    showsVerticalScrollIndicator={false}
+                >
                     {children}
                 </ScrollView>
-            ) : (
-                <View>{children}</View>
             )}
         </View>
     );

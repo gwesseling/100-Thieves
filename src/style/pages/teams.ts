@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         opacity: 0.6,
         borderRadius: 5,
+        left: 0,
     },
     cardOverlayBlack: {
         backgroundColor: stylevars.primaryColor,

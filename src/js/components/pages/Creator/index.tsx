@@ -2,6 +2,7 @@
 /* eslint-disable max-lines-per-function */
 import React, {ReactNode, Fragment} from "react";
 import {View, Text, Image, Dimensions} from "react-native";
+import {useRoute} from "@react-navigation/native";
 import {decodeHTML} from "entities";
 import styles from "_STYLES/pages/creator";
 import Topbar from "_SHARED/Topbar";
@@ -12,9 +13,9 @@ import SocialMedia from "_COMPONENTS/SocialMedia";
 import Video from "_COMPONENTS/Video";
 import Stat from "_COMPONENTS/Stat";
 import {openLink} from "_LIBS/linking";
-import {useRoute} from "@react-navigation/native";
-import useCreator from "./containerHook";
+import About from "_SHARED/About";
 
+import useCreator from "./containerHook";
 import useCreatorVideos from "./hooks/creatorVideos";
 import useCreatorStats from "./hooks/creatorStats";
 
@@ -50,16 +51,7 @@ function Creator(): ReactNode {
                     <Stat title="Videos" animation value={videoCount} deci={1} />
                     <Stat title="Views" animation value={viewCount} />
                 </View>
-                {about ? (
-                    <View style={styles.aboutContainer}>
-                        <Text style={styles.aboutTitle}>About</Text>
-                        {about.map((text, i) => (
-                            <Text key={i} style={styles.aboutText}>
-                                {text}
-                            </Text>
-                        ))}
-                    </View>
-                ) : null}
+                {about ? <About content={about} /> : null}
 
                 <Carousel
                     style={{containerStyle: {marginBottom: 25}}}

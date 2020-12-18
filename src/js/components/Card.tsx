@@ -41,6 +41,7 @@ function Card(props: Props): ReactNode {
                 colors={["transparent", stylevars.primaryColor]}
                 locations={[0, 1]}
             />
+
             <Animated.View style={styles.cardContent}>
                 <Text style={styles.cardTitle}>{title}</Text>
                 <Text style={styles.cardDescription}>{description}</Text>

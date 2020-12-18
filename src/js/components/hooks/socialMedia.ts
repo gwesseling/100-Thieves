@@ -21,6 +21,17 @@ export enum SOCIAL_MEDIA_TYPES {
     website,
 }
 
+const socialMediaResolver = {
+    [SOCIAL_MEDIA_TYPES.twitter]: {color: "#1DA1F2", icon: faTwitter},
+    [SOCIAL_MEDIA_TYPES.youtube]: {color: "#FF3333", icon: faYoutube},
+    [SOCIAL_MEDIA_TYPES.instagram]: {color: "white", icon: faInstagram},
+    [SOCIAL_MEDIA_TYPES.twitch]: {color: "#9147FF", icon: faTwitch},
+    [SOCIAL_MEDIA_TYPES.facebook]: {color: "#2D4474", icon: faFacebookF},
+    [SOCIAL_MEDIA_TYPES.discord]: {color: "#7289DA", icon: faDiscord},
+    [SOCIAL_MEDIA_TYPES.snapchat]: {color: "#CCCA00", icon: faSnapchatGhost},
+    [SOCIAL_MEDIA_TYPES.link]: {color: "white", icon: faLink},
+};
+
 /**
  * Handle social media methods
  */
@@ -29,25 +40,7 @@ export default function useSocialMedia() {
      * Get social media icon style
      */
     const getIconStyle = (type) => {
-        // TODO: maybe move to json file or function?
-        switch (type) {
-            case SOCIAL_MEDIA_TYPES.twitter:
-                return {color: "#1DA1F2", icon: faTwitter};
-            case SOCIAL_MEDIA_TYPES.youtube:
-                return {color: "#FF3333", icon: faYoutube};
-            case SOCIAL_MEDIA_TYPES.instagram:
-                return {color: "white", icon: faInstagram};
-            case SOCIAL_MEDIA_TYPES.twitch:
-                return {color: "#9147FF", icon: faTwitch};
-            case SOCIAL_MEDIA_TYPES.facebook:
-                return {color: "#2D4474", icon: faFacebookF};
-            case SOCIAL_MEDIA_TYPES.discord:
-                return {color: "#7289DA", icon: faDiscord};
-            case SOCIAL_MEDIA_TYPES.snapchat:
-                return {color: "#CCCA00", icon: faSnapchatGhost};
-            case SOCIAL_MEDIA_TYPES.link:
-                return {color: "white", icon: faLink};
-        }
+        return socialMediaResolver[type];
     };
 
     return {

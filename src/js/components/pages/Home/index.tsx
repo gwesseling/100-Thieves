@@ -15,30 +15,28 @@ function Home(props): ReactNode {
     const {height, width} = useWindowDimensions();
 
     return (
-        <Fragment>
-            <Content style={styles.content} withoutScrollView>
-                <Topbar float />
-                <FlatList
-                    snapToAlignment={"start"}
-                    snapToInterval={height}
-                    decelerationRate={"fast"}
-                    showsVerticalScrollIndicator={false}
-                    onMomentumScrollEnd={onScrollEnd}
-                    data={itemMock}
-                    renderItem={({item, index}) => (
-                        <Card
-                            height={height}
-                            title={item.title}
-                            description={item.description}
-                            video={item.video}
-                            cover={item.cover}
-                            isActive={selected === index}
-                        />
-                    )}
-                    keyExtractor={(item) => item.id}
-                />
-            </Content>
-        </Fragment>
+        <Content style={styles.container} withoutScrollView>
+            <Topbar float />
+            <FlatList
+                snapToAlignment={"start"}
+                snapToInterval={height}
+                decelerationRate={"fast"}
+                showsVerticalScrollIndicator={false}
+                onMomentumScrollEnd={onScrollEnd}
+                data={itemMock}
+                renderItem={({item, index}) => (
+                    <Card
+                        height={height}
+                        title={item.title}
+                        description={item.description}
+                        video={item.video}
+                        cover={item.cover}
+                        isActive={selected === index}
+                    />
+                )}
+                keyExtractor={(item) => item.id}
+            />
+        </Content>
     );
 }
 

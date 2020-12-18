@@ -1,5 +1,6 @@
 import Home from "_COMPONENTS/pages/Home";
 import About from "_COMPONENTS/pages/About";
+import Team from "_COMPONENTS/pages/Team";
 import Teams from "_COMPONENTS/pages/Teams";
 import Creator from "_COMPONENTS/pages/Creator";
 import Creators from "_COMPONENTS/pages/Creators";
@@ -14,6 +15,11 @@ export const ROUTES = [
     {
         title: "About",
         component: About,
+    },
+    {
+        title: "Team",
+        component: Team,
+        isHidden: true,
     },
     {
         title: "Teams",

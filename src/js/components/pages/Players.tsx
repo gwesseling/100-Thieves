@@ -1,87 +1,58 @@
 import React, {ReactNode, Fragment} from "react";
 import {View, Text, Image, FlatList} from "react-native";
+import {useNavigation} from "@react-navigation/native";
 import styles from "_STYLES/pages/players";
 import Carousel from "_SHARED/Carousel";
-import {leaguePlayersMock, csPlayersMock, fortnitePlayersMock, lolaPlayersMock} from "_COMPONENTS/mocks/playersMock";
 import Person from "_SHARED/Person";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
+import {teamsMock} from "_COMPONENTS/mocks/teamsMock";
+
+interface Player {
+    id: string;
+    name: string;
+    tag?: string;
+    cover: string;
+}
 
 /**
  * Players page
  */
 function Players(): ReactNode {
+    const {navigate} = useNavigation();
+
+    /**
+     * Render player
+     */
+    function renderPlayer({item}: Player) {
+        return (
+            <Person
+                styles={{containerStyle: styles.player}}
+                imageStyle={styles.playerImage}
+                name={item.name}
+                tag={item?.tag}
+                cover={item.cover}
+                onPress={() => navigate("Player", {id: item.id})}
+            />
+        );
+    }
+
     return (
         <Fragment>
             <Topbar />
             <Content style={styles.players}>
-                <Carousel
-                    title="LEAGUE OF LEGENDS"
-                    data={leaguePlayersMock}
-                    renderItem={({item, index}) => (
-                        <Person
-                            styles={{containerStyle: styles.player}}
-                            imageStyle={styles.playerImage}
-                            name={item.name}
-                            tag={item.tag}
-                            cover={item.cover}
-                        />
-                    )}
-                    keyExtractor={(item) => item.id}
-                    snapToAlignment={"start"}
-                    snapToInterval={135}
-                    decelerationRate={"fast"}
-                />
-                <Carousel
-                    title="COUNTER STRIKE: GLOBALE OFFENSIVE"
-                    data={csPlayersMock}
-                    renderItem={({item, index}) => (
-                        <Person
-                            styles={{containerStyle: styles.player}}
-                            imageStyle={styles.playerImage}
-                            name={item.name}
-                            tag={item.tag}
-                            cover={item.cover}
-                        />
-                    )}
-                    keyExtractor={(item) => item.id}
-                    snapToAlignment={"start"}
-                    snapToInterval={135}
-                    decelerationRate={"fast"}
-                />
-                <Carousel
-                    title="FORTNITE"
-                    data={fortnitePlayersMock}
-                    renderItem={({item, index}) => (
-                        <Person
-                            styles={{containerStyle: styles.player}}
-                            imageStyle={styles.playerImage}
-                            name={item.name}
-                            cover={item.cover}
-                        />
-                    )}
-                    keyExtractor={(item) => item.id}
-                    snapToAlignment={"start"}
-                    snapToInterval={135}
-                    decelerationRate={"fast"}
-                />
-                <Carousel
-                    title="LEAGUE OF LEGENDS ACADEMY"
-                    data={lolaPlayersMock}
-                    renderItem={({item, index}) => (
-                        <Person
-                            styles={{containerStyle: styles.player}}
-                            imageStyle={styles.playerImage}
-                            name={item.name}
-                            tag={item.tag}
-                            cover={item.cover}
-                        />
-                    )}
-                    keyExtractor={(item) => item.id}
-                    snapToAlignment={"start"}
-                    snapToInterval={135}
-                    decelerationRate={"fast"}
-                />
+                {teamsMock.map(({name, players}, i) => (
+                    <Carousel
+                        key={i}
+                        title={name.toUpperCase()}
+                        data={players}
+                        renderItem={renderPlayer}
+                        keyExtractor={(item) => item.id}
+                        snapToAlignment={"start"}
+                        snapToInterval={135}
+                        decelerationRate={"fast"}
+                    />
+                ))}
             </Content>
         </Fragment>
     );

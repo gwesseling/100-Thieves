@@ -18,8 +18,7 @@ interface Props {
 /**
  * Person component
  */
-function Person(props: Props): ReactNode {
-    const {cover, name, tag, styles = {}, onPress = null} = props;
+function Person({cover, name, tag, styles = {}, onPress = null}: Props): ReactNode {
     const {containerStyle, imageStyle, nameStyle, tagStyle} = styles;
 
     return (

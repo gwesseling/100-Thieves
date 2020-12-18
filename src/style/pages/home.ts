@@ -8,3 +8,5 @@ const styles = StyleSheet.create({
         paddingRight: 0,
     },
 });
+
+export default styles;

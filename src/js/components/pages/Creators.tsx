@@ -1,13 +1,13 @@
 import React, {ReactNode, Fragment} from "react";
+import {useNavigation} from "@react-navigation/native";
 import {View, FlatList, Text} from "react-native";
 import styles from "_STYLES/pages/creators";
 import {creatorsMock} from "_COMPONENTS/mocks/creatorsMock";
 import Person from "_SHARED/Person";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
-import {useNavigation} from "@react-navigation/native";
 
-interface Item {
+interface Creator {
     item: {
         id: string;
         name: string;
@@ -25,7 +25,7 @@ function Creators(): ReactNode {
     /**
      * Render items
      */
-    function renderPersons({item}: Item) {
+    function renderPersons({item}: Creator) {
         return (
             <Person
                 name={item.name}
@@ -39,7 +39,7 @@ function Creators(): ReactNode {
     return (
         <Fragment>
             <Topbar />
-            <Content title="Creators" withoutScrollView>
+            <Content style={styles.container} title="Creators" withoutScrollView>
                 <FlatList
                     columnWrapperStyle={styles.creators}
                     numColumns={2}

@@ -30,7 +30,7 @@ function Router() {
     return (
         <NavigationContainer>
             <DrawerNav.Navigator
-                initialRouteName="Player"
+                initialRouteName="Team"
                 backBehavior="history"
                 drawerContent={renderDrawer}
                 overlayColor={"rgba(0, 0, 0, .3)"}

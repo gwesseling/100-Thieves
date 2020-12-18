@@ -2,6 +2,10 @@ import {StyleSheet} from "react-native";
 import stylevars from "_STYLES/stylevars";
 
 const styles = StyleSheet.create({
+    container: {
+        paddingLeft: 0,
+        paddingRight: 0,
+    },
     creators: {
         width: "100%",
         flexDirection: "row",

@@ -3,28 +3,31 @@ import {View, Text, Image, Dimensions} from "react-native";
 import styles from "_STYLES/components/game";
 import Stat from "_COMPONENTS/Stat";
 
+interface Props {
+    team: string;
+    opponent: string;
+    stats: {
+        kills: number;
+        assists: number;
+        deaths: number;
+    };
+}
+
 /**
  * Game card
  */
-function Game(props): ReactNode {
-    const {team, opponent} = props;
+function Game({team, opponent, stats}: Props): ReactNode {
     return (
         <View style={styles.game}>
             <View style={styles.header}>
-                <Image
-                    source={{uri: "https://cdn.pandascore.co/images/team/image/125738/dignitas-fe.png"}}
-                    style={styles.team}
-                />
+                <Image source={{uri: team}} style={styles.team} />
                 <Text style={styles.headerText}>VS</Text>
-                <Image
-                    source={{uri: "https://cdn.pandascore.co/images/team/image/125745/carnage-fe.png"}}
-                    style={styles.team}
-                />
+                <Image source={{uri: opponent}} style={styles.team} />
             </View>
             <View style={styles.bottombar}>
-                <Stat title="Kills" value={20} />
-                <Stat title="Kills" value={20} />
-                <Stat title="Kills" value={20} />
+                <Stat title="Kills" value={stats.kills} />
+                <Stat title="Assists" value={stats.assists} />
+                <Stat title="Deaths" value={stats.deaths} />
             </View>
         </View>
     );
