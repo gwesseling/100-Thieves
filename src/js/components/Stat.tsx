@@ -4,17 +4,19 @@ import styles from "_STYLES/pages/creator";
 import {formatNumber} from "_LIBS/numbers";
 import useCountUpAnimation from "_HOOKS/countUpAnimation";
 
-interface Props {
+type Props = {
+    style?: {[key: string]: string | number};
     title: string;
     deci: number;
     value: number;
-}
+    animation: boolean;
+};
 
 /**
  * Stat component
  */
-function Stat(props: Props) {
-    const {style = {}, animation, title, deci = 2, value} = props;
+function Stat(props: Props): ReactNode {
+    const {style = {}, animation, title, deci = 2, value = 0} = props;
     const {number, suffix} = formatNumber(value, deci);
     const {count} = useCountUpAnimation(animation, number, deci);
 

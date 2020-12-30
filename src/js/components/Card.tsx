@@ -5,13 +5,15 @@ import stylevars from "_STYLES/stylevars";
 import Video from "react-native-video";
 import styles from "_STYLES/components/card";
 
-interface Props {
+type Props = {
     height: number;
     style: Record<string, string | number>;
     isActive: boolean;
     title: string;
     description: string;
-}
+    cover?: string;
+    video?: string;
+};
 
 /**
  * Card Component

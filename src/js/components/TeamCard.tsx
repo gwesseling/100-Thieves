@@ -1,23 +1,26 @@
 import React, {ReactNode} from "react";
-import {View, Text, Image} from "react-native";
+import {View, Text, Image, TouchableWithoutFeedback} from "react-native";
 import style from "_STYLES/pages/teams";
 
-interface Props {
+type Props = {
     name: string;
     cover: string;
     cardStyle: string;
     overlayStyle: string;
-}
+    onPress?: () => void;
+};
 
 /**
  * Team card
  */
-export default function TeamCard({name, cover, cardStyle, overlayStyle}: Props) {
+export default function TeamCard({name, cover, cardStyle, overlayStyle, onPress}: Props): ReactNode {
     return (
-        <View style={[style.card, cardStyle]}>
-            <Image style={style.cardImage} source={cover} />
-            <View style={[style.cardOverlay, overlayStyle]} />
-            <Text style={style.cardText}>{name}</Text>
-        </View>
+        <TouchableWithoutFeedback onPress={onPress}>
+            <View style={[style.card, cardStyle]}>
+                <Image style={style.cardImage} source={cover} />
+                <View style={[style.cardOverlay, overlayStyle]} />
+                <Text style={style.cardText}>{name}</Text>
+            </View>
+        </TouchableWithoutFeedback>
     );
 }

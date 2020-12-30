@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         height: 200,
         width: 300,
         backgroundColor: "#242729",
-        borderRadius: 5,
+        borderRadius: 10,
         elevation: 1,
     },
     header: {
@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         padding: 25,
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
     },
     headerText: {
         color: "white",

@@ -2,6 +2,9 @@ import {StyleSheet} from "react-native";
 import stylevars from "_STYLES/stylevars";
 
 const styles = StyleSheet.create({
+    app: {
+        flex: 1,
+    },
     container: {
         flex: 1,
         backgroundColor: stylevars.primaryColor,
@@ -11,6 +14,9 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingLeft: 15,
         paddingRight: 15,
+    },
+    pageWithOutPadding: {
+        paddingRight: 0,
     },
     pageTitle: {
         color: stylevars.textColor,

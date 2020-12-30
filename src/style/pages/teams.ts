@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     card: {
         width: "100%",
         aspectRatio: 2.5,
-        borderRadius: 5,
+        borderRadius: 10,
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 15,
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     cardImage: {
         height: "100%",
         width: "100%",
-        borderRadius: 5,
+        borderRadius: 10,
         resizeMode: "cover",
     },
     cardOverlay: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         backgroundColor: stylevars.secondaryColor,
         position: "absolute",
         opacity: 0.6,
-        borderRadius: 5,
+        borderRadius: 10,
         left: 0,
     },
     cardOverlayBlack: {
@@ -36,6 +36,20 @@ const styles = StyleSheet.create({
         fontSize: 20,
         position: "absolute",
         textAlign: "center",
+    },
+    player: {
+        padding: 10,
+    },
+    playerImage: {
+        height: 95,
+        width: 95,
+    },
+    tournamentCarousel: {
+        marginBottom: 25,
+    },
+    tournamentTitle: {
+        marginBottom: 15,
+        fontSize: 18,
     },
 });
 

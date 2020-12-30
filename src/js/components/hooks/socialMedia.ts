@@ -32,10 +32,19 @@ const socialMediaResolver = {
     [SOCIAL_MEDIA_TYPES.link]: {color: "white", icon: faLink},
 };
 
+type SociaMediaType = {
+    color: string;
+    icon: string;
+};
+
+type ReturnType = {
+    getIconStyle: (type: SOCIAL_MEDIA_TYPES) => SociaMediaType;
+};
+
 /**
  * Handle social media methods
  */
-export default function useSocialMedia() {
+export default function useSocialMedia(): ReturnType {
     /**
      * Get social media icon style
      */

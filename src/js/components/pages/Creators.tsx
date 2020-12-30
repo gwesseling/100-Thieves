@@ -7,14 +7,14 @@ import Person from "_SHARED/Person";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
 
-interface Creator {
+type Creator = {
     item: {
         id: string;
         name: string;
         tag: string;
         cover: string;
     };
-}
+};
 
 /**
  * Creators page

@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     videoImage: {
         height: "100%",
         width: "100%",
-        borderRadius: 5,
+        borderRadius: 10,
     },
     videoContent: {
         position: "absolute",
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     videoDescription: {
         fontSize: 12,
-        color: stylevars.lighterTextColor,
+        color: stylevars.darkerTextColor,
     },
 });
 

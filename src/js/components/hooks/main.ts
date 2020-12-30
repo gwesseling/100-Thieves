@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 /**
  * Hook to handle main
  */
-export default function useMain() {
+export default function useMain(): void {
     useEffect(() => {
         SplashScreen.hide();
     }, []);

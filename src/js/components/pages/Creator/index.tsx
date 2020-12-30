@@ -1,25 +1,29 @@
-// TODO: split up component
-/* eslint-disable max-lines-per-function */
 import React, {ReactNode, Fragment} from "react";
 import {View, Text, Image, Dimensions} from "react-native";
 import {useRoute} from "@react-navigation/native";
-import {decodeHTML} from "entities";
 import styles from "_STYLES/pages/creator";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
 import Person from "_SHARED/Person";
-import Carousel from "_SHARED/Carousel";
-import SocialMedia from "_COMPONENTS/SocialMedia";
 import Video from "_COMPONENTS/Video";
-import Stat from "_COMPONENTS/Stat";
-import {openLink} from "_LIBS/linking";
 import About from "_SHARED/About";
+import Stats from "_COMPONENTS/creator/Stats";
+import SocialMediaList from "_SHARED/SocialMediaList";
+
+import CreatorVideos from "_COMPONENTS/creator/Videos";
 
 import useCreator from "./containerHook";
-import useCreatorVideos from "./hooks/creatorVideos";
-import useCreatorStats from "./hooks/creatorStats";
+import useCreatorVideos from "_HOOKS/creatorVideos";
+import useCreatorStats from "_HOOKS/creatorStats";
 
-// TODO: section and formatNumber component.
+const LIST_STYLE = {containerStyle: styles.linkContainer};
+
+const CREATOR_STYLE = {
+    containerStyle: styles.creator,
+    nameStyle: styles.creatorName,
+    imageStyle: styles.creatorImage,
+};
+
 /**
  * Creator component
  */
@@ -27,66 +31,21 @@ function Creator(): ReactNode {
     const {params} = useRoute();
     const {name, tag, cover, about, links, channelID} = useCreator(params?.id, 15);
     const {videos} = useCreatorVideos(channelID);
-    const {subscriberCount = 0, videoCount = 0, viewCount = 0} = useCreatorStats(channelID);
-
-    const {width} = Dimensions.get("window");
-    const videoWidth = (width / 100) * 80;
+    const {stats} = useCreatorStats(channelID);
 
     return (
         <Fragment>
             <Topbar />
             <Content style={styles.pageContainer}>
-                <Person
-                    styles={{
-                        containerStyle: styles.creator,
-                        nameStyle: styles.creatorName,
-                        imageStyle: styles.creatorImage,
-                    }}
-                    name={name}
-                    tag={tag}
-                    cover={cover}
-                />
-                <View style={styles.statsContainer}>
-                    <Stat title="Subscribers" animation value={subscriberCount} />
-                    <Stat title="Videos" animation value={videoCount} deci={1} />
-                    <Stat title="Views" animation value={viewCount} />
-                </View>
+                <Person style={CREATOR_STYLE} name={name} tag={tag} cover={cover} />
+
+                {stats ? <Stats stats={stats} /> : null}
+
                 {about ? <About content={about} /> : null}
 
-                <Carousel
-                    style={{containerStyle: {marginBottom: 25}}}
-                    data={links}
-                    renderItem={({item}) => (
-                        <SocialMedia title={item.title} tag={item.tag} type={item.type} link={item.link} />
-                    )}
-                    keyExtractor={(item) => item.id}
-                />
-                {videos ? (
-                    <Carousel
-                        style={{
-                            containerStyle: {marginBottom: 25},
-                            titleStyle: {marginBottom: 15, fontSize: 18},
-                        }}
-                        title="Last videos"
-                        data={videos}
-                        renderItem={({item}) => {
-                            const {snippet, id} = item;
+                {links ? <SocialMediaList style={LIST_STYLE} links={links} /> : null}
 
-                            return (
-                                <Video
-                                    style={{width: videoWidth, height: (videoWidth / 16) * 9}}
-                                    title={decodeHTML(snippet.title)}
-                                    cover={snippet.thumbnails.high.url}
-                                    onPress={() => openLink(`https://www.youtube.com/watch?v=${id.videoId}`)}
-                                />
-                            );
-                        }}
-                        keyExtractor={(item) => item.id.videoId}
-                        snapToAlignment={"start"}
-                        snapToInterval={videoWidth + 15}
-                        decelerationRate={"fast"}
-                    />
-                ) : null}
+                {videos ? <CreatorVideos videos={videos} /> : null}
             </Content>
         </Fragment>
     );

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     cardDescription: {
-        color: stylevars.lighterTextColor,
+        color: stylevars.darkerTextColor,
         fontSize: 14,
         lineHeight: 20,
     },

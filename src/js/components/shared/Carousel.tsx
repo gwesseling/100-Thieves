@@ -2,7 +2,7 @@ import React, {ReactNode} from "react";
 import {View, FlatList, Text} from "react-native";
 import styles from "_STYLES/components/carousel";
 
-interface Props {
+type Props = {
     title: string;
     data: Record<string, string | number>[];
     renderItem: (item: Record<string, string | number>, index: number) => ReactNode;
@@ -11,7 +11,7 @@ interface Props {
         containerStyle: Record<string, string | number>;
         titleStyle: Record<string, string | number>;
     };
-}
+};
 
 /**
  * Carousel component
@@ -21,7 +21,7 @@ function Carousel(props: Props): ReactNode {
     const {containerStyle, titleStyle} = style;
 
     return (
-        <View style={[containerStyle]}>
+        <View style={containerStyle}>
             {title && <Text style={[styles.sectionText, titleStyle]}>{title}</Text>}
             <FlatList horizontal showsHorizontalScrollIndicator={false} {...restProps} />
         </View>

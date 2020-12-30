@@ -8,12 +8,12 @@ import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
 import {teamsMock} from "_COMPONENTS/mocks/teamsMock";
 
-interface Player {
+type Player = {
     id: string;
     name: string;
     tag?: string;
     cover: string;
-}
+};
 
 /**
  * Players page
@@ -27,7 +27,7 @@ function Players(): ReactNode {
     function renderPlayer({item}: Player) {
         return (
             <Person
-                styles={{containerStyle: styles.player}}
+                style={{containerStyle: styles.player}}
                 imageStyle={styles.playerImage}
                 name={item.name}
                 tag={item?.tag}

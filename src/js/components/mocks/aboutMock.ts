@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable max-len */
 export const sectionsMock = [
     {
         title: "100 thieves",

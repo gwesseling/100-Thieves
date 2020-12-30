@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable max-lines */
 import ssumday from "_ASSETS/image/league/ssumday.jpeg";
 import meteos from "_ASSETS/image/league/meteos.jpg";
@@ -24,6 +25,11 @@ import fakegod from "_ASSETS/image/lola/fakegod.jpg";
 import soligo from "_ASSETS/image/lola/soligo.jpg";
 import prismal from "_ASSETS/image/lola/prismal.jpg";
 import kelsey from "_ASSETS/image/lola/kelsey.jpg";
+
+import hiko from "_ASSETS/image/valorant/hiko.jpg";
+import steel from "_ASSETS/image/valorant/steel.jpg";
+import nitro from "_ASSETS/image/valorant/nitro.jpg";
+import dicey from "_ASSETS/image/valorant/dicey.jpg";
 
 import def from "_ASSETS/image/logo.png";
 
@@ -97,56 +103,48 @@ export const leaguePlayersMock = [
         name: "Meteos",
         tag: "Jungler",
         cover: meteos,
-        games: [],
     },
     {
         id: "2",
         name: "Cody Sun",
         tag: "Bot Laner",
         cover: cody,
-        games: [],
     },
     {
         id: "3",
         name: "Ryoma",
         tag: "Mid Laner",
         cover: ryoma,
-        games: [],
     },
     {
         id: "4",
         name: "Stunt",
         tag: "Support",
         cover: stunt,
-        games: [],
     },
     {
         id: "5",
         name: "Chris",
         tag: "General Manager",
         cover: chris,
-        games: [],
     },
     {
         id: "6",
         name: "Tony",
         tag: "Head Coach",
         cover: zikz,
-        games: [],
     },
     {
         id: "7",
         name: "Joseph",
         tag: "Strategic Coach",
         cover: def,
-        games: [],
     },
     {
         id: "8",
         name: "Nathan",
         tag: "Head Analyst",
         cover: def,
-        games: [],
     },
 ];
 
@@ -155,38 +153,32 @@ export const csPlayersMock = [
         id: "9",
         name: "AZR",
         cover: azr,
-        games: [],
     },
     {
         id: "10",
         name: "jks",
         cover: jks,
-        games: [],
     },
     {
         id: "11",
         name: "jkaem",
         cover: jkaem,
-        games: [],
     },
     {
         id: "12",
         name: "Liazz",
         cover: liazz,
-        games: [],
     },
     {
         id: "13",
         name: "Gratisfaction",
         cover: gratisfaction,
-        games: [],
     },
     {
         id: "14",
         name: "kassad",
         tag: "Head Coach",
         cover: kassad,
-        games: [],
     },
     {
         id: "15",
@@ -201,89 +193,115 @@ export const fortnitePlayersMock = [
         id: "16",
         name: "Elevate",
         cover: elevate,
-        games: [],
     },
     {
         id: "17",
         name: "Ceice",
         cover: ceice,
-        games: [],
     },
     {
         id: "18",
         name: "Kyzui",
         cover: kyzui,
-        games: [],
     },
     {
         id: "19",
         name: "Klass",
         cover: klass,
-        games: [],
     },
     {
         id: "20",
         name: "Arkhram",
         cover: arkhram,
-        games: [],
     },
     {
         id: "21",
         name: "Falconer",
         cover: def,
-        games: [],
     },
     {
         id: "22",
         name: "Grandma",
         cover: def,
-        games: [],
     },
 ];
 
 export const lolaPlayersMock = [
     {
-        id: "0",
+        id: "23",
         name: "Fakegod",
         tag: "Top Laner",
         cover: fakegod,
-        games: [],
     },
     {
-        id: "2",
+        id: "24",
         name: "Soligo",
         tag: "Mid Laner",
         cover: soligo,
-        games: [],
     },
     {
-        id: "3",
+        id: "25",
         name: "Prismal",
         tag: "Bot Laner",
         cover: prismal,
-        games: [],
     },
     {
-        id: "4",
+        id: "26",
         name: "Breezyyy",
         tag: "Support",
         cover: def,
-        games: [],
     },
     {
-        id: "1",
+        id: "27",
         name: "Contractz",
         tag: "Jungler",
         cover: def,
-        games: [],
     },
     {
-        id: "5",
+        id: "28",
         name: "Kelsey",
         tag: "Head Coach",
         cover: kelsey,
-        games: [],
     },
 ];
 
-export const playersMock = [...leaguePlayersMock, ...csPlayersMock, ...fortnitePlayersMock, ...lolaPlayersMock];
+export const valorantMock = [
+    {
+        id: "29",
+        name: "Hiko",
+        cover: hiko,
+    },
+    {
+        id: "30",
+        name: "Nitro",
+        cover: nitro,
+    },
+    {
+        id: "31",
+        name: "Steel",
+        cover: steel,
+    },
+    {
+        id: "32",
+        name: "Dicey",
+        cover: dicey,
+    },
+    {
+        id: "33",
+        name: "Asuna",
+        cover: def,
+    },
+    {
+        id: "34",
+        name: "Frost",
+        cover: def,
+    },
+];
+
+export const playersMock = [
+    ...leaguePlayersMock,
+    ...lolaPlayersMock,
+    ...fortnitePlayersMock,
+    ...csPlayersMock,
+    ...valorantMock,
+];

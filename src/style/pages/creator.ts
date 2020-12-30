@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     statTitle: {
-        color: stylevars.lighterTextColor,
+        color: stylevars.darkerTextColor,
     },
     aboutContainer: {
         paddingRight: 15,
@@ -45,10 +45,20 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     aboutText: {
-        color: stylevars.lighterTextColor,
+        color: stylevars.darkerTextColor,
         fontSize: 14,
         lineHeight: 18,
         marginBottom: 25,
+    },
+    linkContainer: {
+        marginBottom: 25,
+    },
+    videosContainer: {
+        marginBottom: 25,
+    },
+    videosTitle: {
+        marginBottom: 15,
+        fontSize: 18,
     },
 });
 

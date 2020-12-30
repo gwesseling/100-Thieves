@@ -1,5 +1,6 @@
 import React, {ReactNode, Fragment} from "react";
 import {View, Text, Image, Dimensions} from "react-native";
+import {useRoute} from "@react-navigation/native";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
 import {teamsMock} from "_COMPONENTS/mocks/teamsMock";
@@ -9,62 +10,28 @@ import Carousel from "_SHARED/Carousel";
 import Person from "_SHARED/Person";
 import Game from "_SHARED/Game";
 import About from "_SHARED/About";
+import Players from "_COMPONENTS/teams/Players";
+import Tournaments from "_COMPONENTS/teams/Tournaments";
+import styles from "_STYLES/general";
 
 /**
  * Team component
  */
 export default function Team(): ReactNode {
-    const {name, about, cover, players, games} = teamsMock[0];
-    const {width} = Dimensions.get("window");
-    const gameWidth = (width / 100) * 80;
+    const {params} = useRoute();
+    const {name, about, cover, players, tournaments, games} = teamsMock[params?.id];
 
     return (
         <Fragment>
             <Topbar />
-            <Content style={{paddingRight: 0}}>
-                <TeamCard name={name} cover={cover} cardStyle={{aspectRatio: 2, paddingRight: 15}} />
+            <Content style={styles.pageWithOutPadding}>
+                <TeamCard name={name} cover={cover} cardStyle={{aspectRatio: 2.25, paddingRight: 15}} />
 
                 {about ? <About content={about} /> : null}
 
-                <Carousel
-                    title={"Players"}
-                    data={players}
-                    renderItem={({item, index}) => (
-                        <Person
-                            styles={{containerStyle: {padding: 10}, imageStyle: {
-                                height: 95,
-                                width: 95,
-                            }}}
-                            name={item.name}
-                            tag={item?.tag}
-                            cover={item.cover}
-                        />
-                    )}
-                    keyExtractor={(item) => item.id}
-                    snapToAlignment={"start"}
-                    snapToInterval={135}
-                    decelerationRate={"fast"}
-                />
-                <Carousel
-                    style={{
-                        containerStyle: {marginBottom: 25},
-                        titleStyle: {marginBottom: 15, fontSize: 18},
-                    }}
-                    title="Last games"
-                    data={games}
-                    renderItem={({item}) => (
-                        <Game
-                            style={{width: gameWidth, height: (gameWidth / 16) * 9}}
-                            team={item.team}
-                            opponent={item.opponent}
-                            stats={item.stats}
-                        />
-                    )}
-                    keyExtractor={(item) => item.id}
-                    snapToAlignment={"start"}
-                    snapToInterval={gameWidth + 15}
-                    decelerationRate={"fast"}
-                />
+                {players ? <Players players={players} /> : null}
+
+                {tournaments ? <Tournaments tournaments={tournaments} /> : null}
             </Content>
         </Fragment>
     );

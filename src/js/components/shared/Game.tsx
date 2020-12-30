@@ -3,7 +3,7 @@ import {View, Text, Image, Dimensions} from "react-native";
 import styles from "_STYLES/components/game";
 import Stat from "_COMPONENTS/Stat";
 
-interface Props {
+type Props = {
     team: string;
     opponent: string;
     stats: {
@@ -11,7 +11,7 @@ interface Props {
         assists: number;
         deaths: number;
     };
-}
+};
 
 /**
  * Game card

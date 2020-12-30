@@ -4,19 +4,18 @@ import styles from "_STYLES/components/video";
 import stylevars from "_STYLES/stylevars";
 import LinearGradient from "react-native-linear-gradient";
 
-interface Props {
-    style: Record<string, string | number>;
+type Props = {
+    style?: Record<string, string | number>;
     title: string;
     image: string;
     cover: string;
     onPress: () => void;
-}
+};
 
 /**
  * Video
  */
-function Video(props: Props): ReactNode {
-    const {style = {}, title, cover, onPress} = props;
+function Video({style = {}, title, cover, onPress}: Props): ReactNode {
     // TODO: make devices like ipads contain 3/ 4 videos
 
     return (

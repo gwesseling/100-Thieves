@@ -1,10 +1,14 @@
 import React, {useState, useEffect, useRef} from "react";
 
+type ReturnType = {
+    count: number;
+};
+
 // TODO: make is ease more (slow down at the end)
 /**
  * Handles count up animation
  */
-export default function useCountUpAnimation(animation = false, val = 0, deci) {
+export default function useCountUpAnimation(animation = false, val = 0, deci: number): ReturnType {
     const [count, setCount] = useState(0.0);
     const countRef = useRef(count);
     let timeout;

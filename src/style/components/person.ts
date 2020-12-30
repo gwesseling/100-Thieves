@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     personTag: {
-        color: stylevars.lighterTextColor,
+        color: stylevars.darkerTextColor,
         textAlign: "center",
         fontSize: 12,
     },

@@ -10,7 +10,7 @@ import styles from "_STYLES/pages/home";
 /**
  * Home page
  */
-function Home(props): ReactNode {
+function Home(): ReactNode {
     const {selected, onScrollEnd} = useHome();
     const {height, width} = useWindowDimensions();
 

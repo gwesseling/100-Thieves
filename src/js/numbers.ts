@@ -1,3 +1,8 @@
+type Format = {
+    number: number;
+    suffix: string;
+};
+
 const formats = {
     trillion: 1000000000000,
     billion: 1000000000,
@@ -8,7 +13,7 @@ const formats = {
 /**
  * Make number readable
  */
-export const formatNumber = (num: number, deci: number) => {
+export const formatNumber = (num: number, deci: number): Format => {
     const {trillion, billion, million, thousand} = formats;
 
     let value = num;

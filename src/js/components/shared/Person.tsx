@@ -2,24 +2,24 @@ import React, {ReactNode} from "react";
 import {View, Text, Image, TouchableWithoutFeedback} from "react-native";
 import personStyle from "_STYLES/components/person";
 
-interface Props {
+type Props = {
     cover: string;
     name: string;
     tag: string;
-    styles?: {
+    style?: {
         containerStyle: Record<string, string | number>;
         imageStyle: Record<string, string | number>;
         nameStyle: Record<string, string | number>;
         tagStyle: Record<string, string | number>;
     };
     onPress: () => void;
-}
+};
 
 /**
  * Person component
  */
-function Person({cover, name, tag, styles = {}, onPress = null}: Props): ReactNode {
-    const {containerStyle, imageStyle, nameStyle, tagStyle} = styles;
+function Person({cover, name, tag, style = {}, onPress = null}: Props): ReactNode {
+    const {containerStyle, imageStyle, nameStyle, tagStyle} = style;
 
     return (
         <TouchableWithoutFeedback onPress={onPress}>

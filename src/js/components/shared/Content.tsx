@@ -2,12 +2,12 @@ import React, {ReactNode} from "react";
 import {ScrollView, View, Text} from "react-native";
 import generalStyles from "_STYLES/general";
 
-interface Props {
+type Props = {
     title?: string;
     style?: Record<string, string | number>;
     children: ReactNode;
     withoutScrollView: boolean;
-}
+};
 
 /**
  * Handle page contexnt

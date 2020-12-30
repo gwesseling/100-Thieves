@@ -2,9 +2,9 @@ import React, {ReactNode} from "react";
 import {View, Text} from "react-native";
 import styles from "_STYLES/pages/creator";
 
-interface Props {
+type Props = {
     content: string[];
-}
+};
 
 /**
  * About component

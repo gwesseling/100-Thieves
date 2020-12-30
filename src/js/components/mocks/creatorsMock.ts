@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable max-lines */
 import {SOCIAL_MEDIA_TYPES} from "_HOOKS/socialMedia";
 
