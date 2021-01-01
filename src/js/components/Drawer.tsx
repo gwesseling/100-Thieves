@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {ScrollView} from "react-native";
 import {DrawerContentScrollView, DrawerItem} from "@react-navigation/drawer";
 import styles from "_STYLES/general";
@@ -17,7 +17,7 @@ type Props = {
 /**
  * Drawer
  */
-function Drawer(props: Props): ReactNode {
+export default function Drawer(props: Props) {
     const {navigation, state} = props;
     const {routeNames, index} = state;
 
@@ -30,7 +30,7 @@ function Drawer(props: Props): ReactNode {
                             labelStyle={styles.drawerLabel}
                             label={title}
                             focused={routeNames[index] == title}
-                            inactiveTintColor={stylevars.textColor}
+                            inactiveTintColor={stylevars.titleColor}
                             activeTintColor={stylevars.secondaryColor}
                             activeBackgroundColor={"transparent"}
                             onPress={() => navigation.navigate(title)}
@@ -42,5 +42,3 @@ function Drawer(props: Props): ReactNode {
         </DrawerContentScrollView>
     );
 }
-
-export default Drawer;

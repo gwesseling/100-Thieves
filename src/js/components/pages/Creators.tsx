@@ -1,4 +1,4 @@
-import React, {ReactNode, Fragment} from "react";
+import React, {Fragment} from "react";
 import {useNavigation} from "@react-navigation/native";
 import {View, FlatList, Text} from "react-native";
 import styles from "_STYLES/pages/creators";
@@ -19,7 +19,7 @@ type Creator = {
 /**
  * Creators page
  */
-function Creators(): ReactNode {
+export default function Creators() {
     const {navigate} = useNavigation();
 
     /**
@@ -52,5 +52,3 @@ function Creators(): ReactNode {
         </Fragment>
     );
 }
-
-export default Creators;

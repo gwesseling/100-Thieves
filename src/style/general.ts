@@ -2,7 +2,7 @@ import {StyleSheet} from "react-native";
 import stylevars from "_STYLES/stylevars";
 
 const styles = StyleSheet.create({
-    app: {
+    flex: {
         flex: 1,
     },
     container: {
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         paddingRight: 0,
     },
     pageTitle: {
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         paddingLeft: 15,
         marginBottom: 10,
         fontWeight: "bold",

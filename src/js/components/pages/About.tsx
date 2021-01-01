@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Image, Text} from "react-native";
 import styles from "_STYLES/pages/about";
 import stylevars from "_STYLES/stylevars";
@@ -11,7 +11,7 @@ import {sectionsMock} from "_COMPONENTS/mocks/aboutMock";
 /**
  * About page
  */
-function About(): ReactNode {
+export default function About() {
     return (
         <Content style={styles.page}>
             <Topbar float />
@@ -40,5 +40,3 @@ function About(): ReactNode {
         </Content>
     );
 }
-
-export default About;

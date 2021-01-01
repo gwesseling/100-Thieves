@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text, Image, TouchableWithoutFeedback} from "react-native";
 import style from "_STYLES/pages/teams";
 
@@ -13,7 +13,7 @@ type Props = {
 /**
  * Team card
  */
-export default function TeamCard({name, cover, cardStyle, overlayStyle, onPress}: Props): ReactNode {
+export default function TeamCard({name, cover, cardStyle, overlayStyle, onPress}: Props) {
     return (
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={[style.card, cardStyle]}>

@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text, Image, Dimensions} from "react-native";
 import styles from "_STYLES/components/game";
 import Stat from "_COMPONENTS/Stat";
@@ -16,7 +16,7 @@ type Props = {
 /**
  * Game card
  */
-function Game({team, opponent, stats}: Props): ReactNode {
+export default function Game({team, opponent, stats}: Props) {
     return (
         <View style={styles.game}>
             <View style={styles.header}>
@@ -32,5 +32,3 @@ function Game({team, opponent, stats}: Props): ReactNode {
         </View>
     );
 }
-
-export default Game;

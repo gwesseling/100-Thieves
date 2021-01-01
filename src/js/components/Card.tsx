@@ -1,4 +1,4 @@
-import React, {ReactNode, useEffect} from "react";
+import React, {useEffect} from "react";
 import {View, Text, Image, Animated} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import stylevars from "_STYLES/stylevars";
@@ -18,7 +18,7 @@ type Props = {
 /**
  * Card Component
  */
-function Card(props: Props): ReactNode {
+export default function Card(props: Props) {
     const {height, isActive, title, cover, video, description, style = {}} = props;
     const cardWidth = (height / 9) * 16;
 
@@ -51,5 +51,3 @@ function Card(props: Props): ReactNode {
         </View>
     );
 }
-
-export default Card;

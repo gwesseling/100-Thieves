@@ -9,28 +9,28 @@ const styles = StyleSheet.create({
         width: 180,
         borderRadius: 15,
         backgroundColor: stylevars.lightRed,
-        marginRight: 15
+        marginRight: 15,
     },
     header: {
         flex: 1,
         width: "100%",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     headerImage: {
         height: 50,
         width: "100%",
-        marginBottom: 10
+        marginBottom: 10,
     },
     content: {
         alignItems: "center",
         padding: 15,
-        backgroundColor: stylevars.grey,
-        borderRadius: 10,
+        backgroundColor: stylevars.lightGray,
+        borderRadius: stylevars.borderRadius,
         justifyContent: "center",
-        width: '100%'
+        width: "100%",
     },
     title: {
-        color: "white",
+        color: stylevars.titleColor,
         fontSize: 18,
         fontWeight: "bold",
         textTransform: "uppercase",
@@ -38,26 +38,26 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     description: {
-        color: stylevars.darkerTextColor, 
-        textAlign: "center", 
-        marginBottom: 10
+        color: stylevars.textColor,
+        textAlign: "center",
+        marginBottom: 10,
     },
     footer: {
         flexDirection: "row",
         justifyContent: "center",
     },
     divider: {
-        borderTopWidth: 1, 
-        borderColor: stylevars.secondaryColor, 
-        width: 30, 
-        marginTop: 10
+        borderTopWidth: 1,
+        borderColor: stylevars.secondaryColor,
+        width: 30,
+        marginTop: 10,
     },
     placement: {
         paddingLeft: 5,
         paddingRight: 5,
-        color: "#E11E27",
-        textTransform: "uppercase"
-    }
+        color: stylevars.valorantRed,
+        textTransform: "uppercase",
+    },
 });
 
 export default styles;

@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import Carousel from "_SHARED/Carousel";
 import SocialMedia from "_COMPONENTS/SocialMedia";
 import {LinkType} from "_HOOKS/socialMedia";
@@ -11,7 +11,7 @@ type Props = {
 /**
  * Renders a list with
  */
-export default function SocialMediaList({style, links}: Props): ReactNode {
+export default function SocialMediaList({style, links}: Props) {
     return (
         <Carousel
             style={style}

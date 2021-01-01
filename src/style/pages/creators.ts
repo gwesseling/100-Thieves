@@ -24,14 +24,14 @@ const styles = StyleSheet.create({
         borderRadius: 100,
     },
     creatorName: {
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         textAlign: "center",
         fontWeight: "bold",
         fontSize: 16,
         marginTop: 10,
     },
     creatorTag: {
-        color: stylevars.darkerTextColor,
+        color: stylevars.textColor,
         textAlign: "center",
         fontSize: 12,
     },

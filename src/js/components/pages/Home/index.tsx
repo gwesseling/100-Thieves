@@ -1,4 +1,4 @@
-import React, {ReactNode, Fragment, useState} from "react";
+import React, {Fragment, useState} from "react";
 import {useWindowDimensions, View, Text, Image, ScrollView, FlatList} from "react-native";
 import Topbar from "_SHARED/Topbar";
 import Content from "_SHARED/Content";
@@ -10,7 +10,7 @@ import styles from "_STYLES/pages/home";
 /**
  * Home page
  */
-function Home(): ReactNode {
+export default function Home() {
     const {selected, onScrollEnd} = useHome();
     const {height, width} = useWindowDimensions();
 
@@ -39,5 +39,3 @@ function Home(): ReactNode {
         </Content>
     );
 }
-
-export default Home;

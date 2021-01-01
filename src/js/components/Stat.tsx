@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text} from "react-native";
 import styles from "_STYLES/pages/creator";
 import {formatNumber} from "_LIBS/numbers";
@@ -15,7 +15,7 @@ type Props = {
 /**
  * Stat component
  */
-function Stat(props: Props): ReactNode {
+export default function Stat(props: Props) {
     const {style = {}, animation, title, deci = 2, value = 0} = props;
     const {number, suffix} = formatNumber(value, deci);
     const {count} = useCountUpAnimation(animation, number, deci);
@@ -30,5 +30,3 @@ function Stat(props: Props): ReactNode {
         </View>
     );
 }
-
-export default Stat;

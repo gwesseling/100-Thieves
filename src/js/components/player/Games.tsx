@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {Dimensions} from "react-native";
 import Carousel from "_SHARED/Carousel";
 import Game from "_SHARED/Game";
@@ -21,7 +21,7 @@ type Props = {
 /**
  * Games
  */
-export default function Games({style, games}: Props): ReactNode {
+export default function Games({style, games}: Props) {
     const {width} = Dimensions.get("window");
     const gameWidth = (width / 100) * 80;
 

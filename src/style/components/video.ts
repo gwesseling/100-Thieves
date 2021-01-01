@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     videoImage: {
         height: "100%",
         width: "100%",
-        borderRadius: 10,
+        borderRadius: stylevars.borderRadius,
     },
     videoContent: {
         position: "absolute",
@@ -27,12 +27,8 @@ const styles = StyleSheet.create({
         zIndex: 1,
     },
     videoTitle: {
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         fontWeight: "bold",
-    },
-    videoDescription: {
-        fontSize: 12,
-        color: stylevars.darkerTextColor,
     },
 });
 

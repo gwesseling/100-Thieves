@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import Carousel from "_SHARED/Carousel";
 import Prize from "_COMPONENTS/teams/Prize";
 import styles from "_STYLES/pages/teams";
@@ -23,7 +23,7 @@ const carouselStyling = {
 /**
  * Team tournaments
  */
-export default function Tournaments({tournaments}: Props): ReactNode {
+export default function Tournaments({tournaments}: Props) {
     return (
         <Carousel
             style={carouselStyling}

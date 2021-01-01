@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import styles from "_STYLES/pages/creator";
 import {View} from "react-native";
 import Stat from "_COMPONENTS/Stat";
@@ -14,7 +14,7 @@ type Props = {
 /**
  * Creator stats
  */
-export default function Stats({stats}: Props): ReactNode {
+export default function Stats({stats}: Props) {
     return (
         <View style={styles.statsContainer}>
             <Stat title="Subscribers" animation value={stats.subscriberCount} />

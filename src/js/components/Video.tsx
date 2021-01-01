@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text, Image, TouchableNativeFeedback} from "react-native";
 import styles from "_STYLES/components/video";
 import stylevars from "_STYLES/stylevars";
@@ -15,7 +15,7 @@ type Props = {
 /**
  * Video
  */
-function Video({style = {}, title, cover, onPress}: Props): ReactNode {
+export default function Video({style = {}, title, cover, onPress}: Props) {
     // TODO: make devices like ipads contain 3/ 4 videos
 
     return (
@@ -36,5 +36,3 @@ function Video({style = {}, title, cover, onPress}: Props): ReactNode {
         </TouchableNativeFeedback>
     );
 }
-
-export default Video;

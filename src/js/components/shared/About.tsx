@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text} from "react-native";
 import styles from "_STYLES/pages/creator";
 
@@ -9,7 +9,7 @@ type Props = {
 /**
  * About component
  */
-export default function About({content}: Props): ReactNode {
+export default function About({content}: Props) {
     return (
         <View style={styles.aboutContainer}>
             <Text style={styles.aboutTitle}>About</Text>

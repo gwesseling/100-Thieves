@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     card: {
         width: "100%",
         aspectRatio: 2.5,
-        borderRadius: 10,
+        borderRadius: stylevars.borderRadius,
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 15,
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     cardImage: {
         height: "100%",
         width: "100%",
-        borderRadius: 10,
+        borderRadius: stylevars.borderRadius,
         resizeMode: "cover",
     },
     cardOverlay: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         backgroundColor: stylevars.secondaryColor,
         position: "absolute",
         opacity: 0.6,
-        borderRadius: 10,
+        borderRadius: stylevars.borderRadius,
         left: 0,
     },
     cardOverlayBlack: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         opacity: 0.6,
     },
     cardText: {
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         textTransform: "uppercase",
         fontWeight: "bold",
         fontSize: 20,

@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text, Image, Dimensions} from "react-native";
 import styles from "_STYLES/components/prize";
 
@@ -12,7 +12,7 @@ type Props = {
 /**
  * Prize/ award component
  */
-export default function Prize({title, cover, description, placement}: Props): ReactNode {
+export default function Prize({title, cover, description, placement}: Props) {
     return (
         <View style={styles.container}>
             <View style={styles.header}>

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         backgroundColor: stylevars.drawerOverlay,
     },
     drawerItemText: {
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         padding: 25,
         paddingBottom: 10,
         fontSize: 20,

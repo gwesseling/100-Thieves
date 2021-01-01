@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text, TouchableNativeFeedback} from "react-native";
 import useSocialMedia, {SOCIAL_MEDIA_TYPES} from "_HOOKS/socialMedia";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
@@ -16,7 +16,7 @@ type Props = {
 /**
  * Social media component
  */
-function SocialMedia({title, tag, type, link}: Props): ReactNode {
+export default function SocialMedia({title, tag, type, link}: Props) {
     const {getIconStyle} = useSocialMedia();
     const {icon, color} = getIconStyle(type);
 
@@ -36,5 +36,3 @@ function SocialMedia({title, tag, type, link}: Props): ReactNode {
         </TouchableNativeFeedback>
     );
 }
-
-export default SocialMedia;

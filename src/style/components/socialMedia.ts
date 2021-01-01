@@ -15,13 +15,13 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         paddingLeft: 15,
         paddingRight: 15,
-        backgroundColor: "#242729",
+        backgroundColor: stylevars.cardBackground,
     },
     icon: {
         marginRight: 10,
     },
     text: {
-        color: "white",
+        color: stylevars.titleColor,
         fontSize: 14,
         fontWeight: "bold",
     },

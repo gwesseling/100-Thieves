@@ -28,24 +28,24 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     statValue: {
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         fontSize: 16,
         fontWeight: "bold",
     },
     statTitle: {
-        color: stylevars.darkerTextColor,
+        color: stylevars.textColor,
     },
     aboutContainer: {
         paddingRight: 15,
     },
     aboutTitle: {
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         fontSize: 18,
         fontWeight: "bold",
         marginBottom: 10,
     },
     aboutText: {
-        color: stylevars.darkerTextColor,
+        color: stylevars.textColor,
         fontSize: 14,
         lineHeight: 18,
         marginBottom: 25,

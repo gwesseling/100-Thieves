@@ -13,6 +13,7 @@ import avalanche from "_ASSETS/image/creators/avalanche.jpg";
 import classy from "_ASSETS/image/creators/classy.jpg";
 import froste from "_ASSETS/image/creators/froste.jpg";
 import mako from "_ASSETS/image/creators/mako.jpg";
+import neeko from "_ASSETS/image/creators/neeko.jpg";
 
 export const creatorsMock = [
     {
@@ -49,6 +50,12 @@ export const creatorsMock = [
                 title: "Noahj456 Official Discord",
                 type: SOCIAL_MEDIA_TYPES.discord,
                 link: "https://discord.gg/NoahJ456",
+            },
+            {
+                id: "4",
+                title: "Merch shop",
+                type: SOCIAL_MEDIA_TYPES.link,
+                link: "http://noahj456shop.com",
             },
         ],
         channelID: "UCP9tAErY_RlX4RFKssE4ogg",
@@ -213,5 +220,11 @@ export const creatorsMock = [
         name: "Mako",
         tag: "@Mako",
         cover: mako,
+    },
+    {
+        id: 11,
+        name: "Neeko",
+        tag: "@neekolul",
+        cover: neeko,
     },
 ];

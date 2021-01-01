@@ -1,4 +1,4 @@
-import React, {ReactNode, Fragment} from "react";
+import React, {Fragment} from "react";
 import {View, Text, Image, Dimensions} from "react-native";
 import {useRoute} from "@react-navigation/native";
 import Topbar from "_SHARED/Topbar";
@@ -17,7 +17,7 @@ import styles from "_STYLES/general";
 /**
  * Team component
  */
-export default function Team(): ReactNode {
+export default function Team() {
     const {params} = useRoute();
     const {name, about, cover, players, tournaments, games} = teamsMock[params?.id];
 

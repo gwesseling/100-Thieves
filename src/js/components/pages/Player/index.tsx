@@ -1,4 +1,4 @@
-import React, {ReactNode, Fragment} from "react";
+import React, {Fragment} from "react";
 import {View, Text, Image, Dimensions} from "react-native";
 import {useRoute} from "@react-navigation/native";
 import styles from "_STYLES/pages/creator";
@@ -24,13 +24,13 @@ const LIST_STYLE = {containerStyle: styles.linkContainer};
 
 const GAMES_STYLE = {
     containerStyle: styles.gamesContainer,
-    titleStyle: style.gamesTitle,
+    titleStyle: styles.gamesTitle,
 };
 
 /**
  * Player page
  */
-function Player(): ReactNode {
+export default function Player() {
     const {params} = useRoute();
     const {name, about, tag, cover, links, stats, games} = usePlayer(params?.id);
 
@@ -50,5 +50,3 @@ function Player(): ReactNode {
         </Fragment>
     );
 }
-
-export default Player;

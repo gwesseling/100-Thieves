@@ -9,6 +9,7 @@ import {
     faDiscord,
     faSnapchatGhost,
 } from "@fortawesome/free-brands-svg-icons";
+import stylevars from "_STYLES/stylevars";
 
 export enum SOCIAL_MEDIA_TYPES {
     twitter,
@@ -22,29 +23,20 @@ export enum SOCIAL_MEDIA_TYPES {
 }
 
 const socialMediaResolver = {
-    [SOCIAL_MEDIA_TYPES.twitter]: {color: "#1DA1F2", icon: faTwitter},
-    [SOCIAL_MEDIA_TYPES.youtube]: {color: "#FF3333", icon: faYoutube},
-    [SOCIAL_MEDIA_TYPES.instagram]: {color: "white", icon: faInstagram},
-    [SOCIAL_MEDIA_TYPES.twitch]: {color: "#9147FF", icon: faTwitch},
-    [SOCIAL_MEDIA_TYPES.facebook]: {color: "#2D4474", icon: faFacebookF},
-    [SOCIAL_MEDIA_TYPES.discord]: {color: "#7289DA", icon: faDiscord},
-    [SOCIAL_MEDIA_TYPES.snapchat]: {color: "#CCCA00", icon: faSnapchatGhost},
-    [SOCIAL_MEDIA_TYPES.link]: {color: "white", icon: faLink},
-};
-
-type SociaMediaType = {
-    color: string;
-    icon: string;
-};
-
-type ReturnType = {
-    getIconStyle: (type: SOCIAL_MEDIA_TYPES) => SociaMediaType;
+    [SOCIAL_MEDIA_TYPES.twitter]: {color: stylevars.twitterColor, icon: faTwitter},
+    [SOCIAL_MEDIA_TYPES.youtube]: {color: stylevars.youtubeColor, icon: faYoutube},
+    [SOCIAL_MEDIA_TYPES.instagram]: {color: stylevars.instagramColor, icon: faInstagram},
+    [SOCIAL_MEDIA_TYPES.twitch]: {color: stylevars.twitchColor, icon: faTwitch},
+    [SOCIAL_MEDIA_TYPES.facebook]: {color: stylevars.facebookColor, icon: faFacebookF},
+    [SOCIAL_MEDIA_TYPES.discord]: {color: stylevars.discordColor, icon: faDiscord},
+    [SOCIAL_MEDIA_TYPES.snapchat]: {color: stylevars.snapchatColor, icon: faSnapchatGhost},
+    [SOCIAL_MEDIA_TYPES.link]: {color: stylevars.linkColor, icon: faLink},
 };
 
 /**
  * Handle social media methods
  */
-export default function useSocialMedia(): ReturnType {
+export default function useSocialMedia() {
     /**
      * Get social media icon style
      */

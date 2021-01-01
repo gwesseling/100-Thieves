@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View} from "react-native";
 import styles from "_STYLES/pages/creator";
 import Stat from "_COMPONENTS/Stat";
@@ -6,7 +6,7 @@ import Stat from "_COMPONENTS/Stat";
 /**
  * Stats
  */
-export default function Stats(): ReactNode {
+export default function Stats() {
     return (
         <View style={styles.statsContainer}>
             <Stat title="Games played" value={20} />

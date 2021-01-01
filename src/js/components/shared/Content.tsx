@@ -12,8 +12,7 @@ type Props = {
 /**
  * Handle page contexnt
  */
-function Content(props: Props): ReactNode {
-    const {style = {}, title, children, withoutScrollView} = props;
+export default function Content({style = {}, title, children, withoutScrollView}: Props) {
     const contentStyling = [generalStyles.main, style];
 
     return (
@@ -33,5 +32,3 @@ function Content(props: Props): ReactNode {
         </View>
     );
 }
-
-export default Content;

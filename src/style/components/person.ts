@@ -14,14 +14,14 @@ const styles = StyleSheet.create({
         borderRadius: 100,
     },
     personName: {
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         textAlign: "center",
         fontWeight: "bold",
         fontSize: 16,
         marginTop: 10,
     },
     personTag: {
-        color: stylevars.darkerTextColor,
+        color: stylevars.textColor,
         textAlign: "center",
         fontSize: 12,
     },

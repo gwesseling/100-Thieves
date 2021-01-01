@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text} from "react-native";
 import {createDrawerNavigator} from "@react-navigation/drawer";
 import {NavigationContainer} from "@react-navigation/native";
@@ -19,7 +19,7 @@ const DrawerNav = createDrawerNavigator();
 /**
  * Router
  */
-export default function Router(): ReactNode {
+export default function Router() {
     /**
      * Render drawer
      */
@@ -30,7 +30,7 @@ export default function Router(): ReactNode {
     return (
         <NavigationContainer>
             <DrawerNav.Navigator
-                initialRouteName="Teams"
+                initialRouteName="Home"
                 backBehavior="history"
                 drawerContent={renderDrawer}
                 overlayColor={"rgba(0, 0, 0, .3)"}

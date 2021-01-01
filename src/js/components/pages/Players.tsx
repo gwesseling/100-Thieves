@@ -1,4 +1,4 @@
-import React, {ReactNode, Fragment} from "react";
+import React, {Fragment} from "react";
 import {View, Text, Image, FlatList} from "react-native";
 import {useNavigation} from "@react-navigation/native";
 import styles from "_STYLES/pages/players";
@@ -18,7 +18,7 @@ type Player = {
 /**
  * Players page
  */
-function Players(): ReactNode {
+export default function Players() {
     const {navigate} = useNavigation();
 
     /**
@@ -57,5 +57,3 @@ function Players(): ReactNode {
         </Fragment>
     );
 }
-
-export default Players;

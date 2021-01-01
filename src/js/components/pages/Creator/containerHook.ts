@@ -10,18 +10,10 @@ export type LinkType = {
     type: SOCIAL_MEDIA_TYPES;
 };
 
-type ReturnType = {
-    name: string;
-    tag?: string;
-    cover: string;
-    about: [string];
-    links: [LinkType];
-};
-
 /**
  * Handle creator methods
  */
-export default function useCreator(id = 0, amount = 15): ReturnType {
+export default function useCreator(id = 0, amount = 15) {
     const {name, tag, cover, about, links, channelID} = creatorsMock[id];
 
     return {

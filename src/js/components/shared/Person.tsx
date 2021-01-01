@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {View, Text, Image, TouchableWithoutFeedback} from "react-native";
 import personStyle from "_STYLES/components/person";
 
@@ -18,7 +18,7 @@ type Props = {
 /**
  * Person component
  */
-function Person({cover, name, tag, style = {}, onPress = null}: Props): ReactNode {
+export default function Person({cover, name, tag, style = {}, onPress = null}: Props) {
     const {containerStyle, imageStyle, nameStyle, tagStyle} = style;
 
     return (
@@ -31,5 +31,3 @@ function Person({cover, name, tag, style = {}, onPress = null}: Props): ReactNod
         </TouchableWithoutFeedback>
     );
 }
-
-export default Person;

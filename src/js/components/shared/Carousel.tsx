@@ -16,7 +16,7 @@ type Props = {
 /**
  * Carousel component
  */
-function Carousel(props: Props): ReactNode {
+export default function Carousel(props: Props) {
     const {title, style = {}, ...restProps} = props;
     const {containerStyle, titleStyle} = style;
 
@@ -27,5 +27,3 @@ function Carousel(props: Props): ReactNode {
         </View>
     );
 }
-
-export default Carousel;

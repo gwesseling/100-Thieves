@@ -16,14 +16,10 @@ export type VideoType = {
     };
 };
 
-type ReturnType = {
-    videos: [VideoType];
-};
-
 /**
  * Fetch creator videos from YT API
  */
-export default function useCreatorVideos(id: string, amount = 15): ReturnType {
+export default function useCreatorVideos(id: string, amount = 15) {
     const videoQuery = useFetch(
         // eslint-disable-next-line max-len
         `${Config.YT_URL}/search?part=snippet&channelId=${id}&maxResults=${amount}&order=date&type=video&key=${Config.YT_KEY}`,

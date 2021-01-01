@@ -1,4 +1,4 @@
-import React, {ReactNode, Fragment} from "react";
+import React, {Fragment} from "react";
 import {View, Text, Image, Dimensions} from "react-native";
 import {useRoute} from "@react-navigation/native";
 import styles from "_STYLES/pages/creator";
@@ -27,7 +27,7 @@ const CREATOR_STYLE = {
 /**
  * Creator component
  */
-function Creator(): ReactNode {
+function Creator() {
     const {params} = useRoute();
     const {name, tag, cover, about, links, channelID} = useCreator(params?.id, 15);
     const {videos} = useCreatorVideos(channelID);

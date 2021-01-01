@@ -1,10 +1,11 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {Dimensions} from "react-native";
 import {decodeHTML} from "entities";
 import Carousel from "_SHARED/Carousel";
 import Video from "_COMPONENTS/Video";
 import {openLink} from "_LIBS/linking";
 import {VideoType} from "_HOOKS/creatorVideos";
+import styles from "_STYLES/pages/creator";
 
 type Props = {
     videos: [VideoType];
@@ -18,7 +19,7 @@ const VIDEOS_STYLE = {
 /**
  * Videos
  */
-export default function Videos({videos}: Props): ReactNode {
+export default function Videos({videos}: Props) {
     const {width} = Dimensions.get("window");
     const videoWidth = (width / 100) * 80;
 

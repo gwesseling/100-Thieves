@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import {useNavigation} from "@react-navigation/native";
 import Carousel from "_SHARED/Carousel";
 import Person from "_SHARED/Person";
@@ -23,7 +23,7 @@ const personStyle = {
 /**
  * Team players
  */
-export default function Players({players}: Props): ReactNode {
+export default function Players({players}: Props) {
     const {navigate} = useNavigation();
 
     /**

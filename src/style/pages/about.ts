@@ -3,6 +3,7 @@ import stylevars from "_STYLES/stylevars";
 
 const styles = StyleSheet.create({
     page: {
+        paddingTop: 0,
         paddingLeft: 0,
         paddingRight: 0,
     },
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     },
     sectionHeader: {
         width: "30%",
-        color: stylevars.textColor,
+        color: stylevars.titleColor,
         fontWeight: "bold",
         fontSize: 20,
         textTransform: "uppercase",

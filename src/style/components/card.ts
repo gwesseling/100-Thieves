@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
         overflow: "hidden",
     },
     cardTitle: {
-        color: "white",
+        color: stylevars.titleColor,
         marginBottom: 10,
         fontWeight: "bold",
         fontSize: 20,
     },
     cardDescription: {
-        color: stylevars.darkerTextColor,
+        color: stylevars.textColor,
         fontSize: 14,
         lineHeight: 20,
     },

@@ -1,10 +1,11 @@
-import React, {ReactNode, useContext} from "react";
+import React, {useContext} from "react";
 import {View, Image, TouchableNativeFeedback} from "react-native";
 import {Link} from "react-router-native";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faBars, faShoppingCart} from "@fortawesome/free-solid-svg-icons";
 import styles from "_STYLES/components/topbar";
 import {useNavigation} from "@react-navigation/native";
+import {openLink} from "_LIBS/linking";
 
 import logo from "_ASSETS/image/logo.png";
 
@@ -17,9 +18,16 @@ type Props = {
 /**
  * Topbar component
  */
-function Topbar(props: Props): ReactNode {
+export default function Topbar(props: Props) {
     const {float = false} = props;
     const {openDrawer} = useNavigation();
+
+    /**
+     * Open website
+     */
+    function openWebsite() {
+        openLink("https://100thieves.com/");
+    }
 
     return (
         <View style={[styles.topbar, float ? styles.topbarActive : {}]}>
@@ -27,9 +35,9 @@ function Topbar(props: Props): ReactNode {
                 <FontAwesomeIcon icon={faBars} size={20} style={styles.topbarMenu} />
             </TouchableNativeFeedback>
             <Image style={styles.topbarLogo} source={logo} />
-            <FontAwesomeIcon icon={faShoppingCart} size={20} style={styles.topbarShop} />
+            <TouchableNativeFeedback onPress={openWebsite} hitSlop={HITSLOP}>
+                <FontAwesomeIcon icon={faShoppingCart} size={20} style={styles.topbarShop} />
+            </TouchableNativeFeedback>
         </View>
     );
 }
-
-export default Topbar;
