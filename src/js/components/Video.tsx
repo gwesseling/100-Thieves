@@ -16,8 +16,6 @@ type Props = {
  * Video
  */
 export default function Video({style = {}, title, cover, onPress}: Props) {
-    // TODO: make devices like ipads contain 3/ 4 videos
-
     return (
         <TouchableNativeFeedback useForeground onPress={onPress}>
             <View style={[styles.video, style]}>

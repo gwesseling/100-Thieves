@@ -12,6 +12,7 @@ type Props = {
     title: string;
     description: string;
     cover?: string;
+    poster?: string;
     video?: string;
 };
 
@@ -19,8 +20,7 @@ type Props = {
  * Card Component
  */
 export default function Card(props: Props) {
-    const {height, isActive, title, cover, video, description, style = {}} = props;
-    const cardWidth = (height / 9) * 16;
+    const {height, isActive, title, cover, poster = "", video, description, style = {}} = props;
 
     return (
         <View style={[styles.card, style]}>
@@ -31,12 +31,12 @@ export default function Card(props: Props) {
                     muted
                     disableFocus
                     repeat
-                    resizeMode="stretch"
-                    style={{height, width: cardWidth}}
+                    resizeMode="cover"
+                    style={{height, width: "100%"}}
                 />
             ) : null}
 
-            {cover ? <Image style={{height, width: cardWidth}} source={{uri: cover}} /> : null}
+            {cover ? <Image style={{height, width: "100%"}} source={{uri: cover}} resizeMode="cover" /> : null}
 
             <LinearGradient
                 style={[{height}, styles.cardOverlay]}

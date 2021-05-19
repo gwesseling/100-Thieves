@@ -8,7 +8,6 @@ import Person from "_SHARED/Person";
 import {playersMock} from "_COMPONENTS/mocks/playersMock";
 import SocialMedia from "_COMPONENTS/SocialMedia";
 import About from "_SHARED/About";
-import Stats from "_COMPONENTS/player/Stats";
 import SocialMediaList from "_SHARED/SocialMediaList";
 import Games from "_COMPONENTS/player/Games";
 
@@ -32,14 +31,13 @@ const GAMES_STYLE = {
  */
 export default function Player() {
     const {params} = useRoute();
-    const {name, about, tag, cover, links, stats, games} = usePlayer(params?.id);
+    const {name, about, tag, cover, links, games} = usePlayer(params?.id);
 
     return (
         <Fragment>
             <Topbar />
             <Content style={styles.pageContainer}>
                 <Person style={PERSON_STYLE} name={name} tag={tag} cover={cover} />
-                {stats ? <Stats /> : null}
 
                 {about ? <About content={about} /> : null}
 

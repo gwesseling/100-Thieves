@@ -21,7 +21,7 @@ const VIDEOS_STYLE = {
  */
 export default function Videos({videos}: Props) {
     const {width} = Dimensions.get("window");
-    const videoWidth = (width / 100) * 80;
+    const videoWidth = width < 480 ? (width / 100) * 80 : (width / 100) * 33;
 
     return (
         <Carousel

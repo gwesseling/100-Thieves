@@ -25,7 +25,7 @@ export const itemMock = [
     },
     {
         id: "3",
-        title: "2020 jersey prgm.",
+        title: "2020 jersey progam.",
         description:
             "Witness the beginning of a new decade of 100 Thieves. The 2020 Jersey Program separates us from the pack in the arena and on the street. Today we unveil the first colorways: our Primary, Secondary and Alternate jerseys.",
         cover:

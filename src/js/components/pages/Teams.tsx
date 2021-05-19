@@ -18,19 +18,15 @@ export default function Teams() {
             <Topbar />
             <Content title="Teams">
                 {teamsMock.map(
-                    ({id, name, cover}, i): ReactNode => {
-                        const black = i % 2 != 0 ? style.cardOverlayBlack : null;
-
-                        return (
-                            <TeamCard
-                                key={i}
-                                name={name}
-                                cover={cover}
-                                overlayStyle={black}
-                                onPress={() => navigate("Team", {id})}
-                            />
-                        );
-                    },
+                    ({id, name, cover}, i): ReactNode => (
+                        <TeamCard
+                            key={i}
+                            name={name}
+                            cover={cover}
+                            overlayStyle={i % 2 != 0 ? style.cardOverlayBlack : null}
+                            onPress={() => navigate("Team", {id})}
+                        />
+                    ),
                 )}
             </Content>
         </Fragment>

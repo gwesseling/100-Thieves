@@ -4,7 +4,7 @@ import React, {useState, useEffect, useRef} from "react";
 /**
  * Handles count up animation
  */
-export default function useCountUpAnimation(animation = false, val = 0, deci: number) {
+export default function useCountUpAnimation(animation = false, value = 0, deci = 2) {
     const [count, setCount] = useState(0.0);
     const countRef = useRef(count);
     let timeout;
@@ -13,13 +13,13 @@ export default function useCountUpAnimation(animation = false, val = 0, deci: nu
      * Set timeout for counter anima;tion.
      */
     const setTimeoutCounter = () => {
-        // TODO: rename variables
-        let addon = val / 31.25;
+        // Magic number
+        let addon = value / 31.25;
 
-        // check if addon is lower the rest value of val - current count
-        if (val - countRef.current < addon) {
+        // check if addon is lower the rest value of value - current count
+        if (value - countRef.current < addon) {
             // if not replace addon with the rest value
-            addon = val - countRef.current;
+            addon = value - countRef.current;
         }
 
         // Add addon value to current count.
@@ -27,11 +27,11 @@ export default function useCountUpAnimation(animation = false, val = 0, deci: nu
         // Calculate value for rounding on (multiple) digits
         const round = Math.pow(10, deci);
         // Round number to solid number or a number with (mulitple) digits
-        const c = Number.isInteger(val) ? Math.trunc(newCount) : Math.floor(newCount * round) / round;
+        const digits = Number.isInteger(value) ? Math.trunc(newCount) : Math.floor(newCount * round) / round;
 
-        setCount(c);
+        setCount(digits);
 
-        if (countRef.current < val) {
+        if (countRef.current < value) {
             timeout = setTimeout(setTimeoutCounter, 1);
         }
     };
@@ -44,12 +44,13 @@ export default function useCountUpAnimation(animation = false, val = 0, deci: nu
     };
 
     useEffect(() => {
-        if (val > 0 && animation) {
+        if (value > 0 && animation) {
+            setCount(0);
             startAnimation();
         } else {
-            setCount(val);
+            setCount(value);
         }
-    }, [val]);
+    }, [value]);
 
     return {
         count,

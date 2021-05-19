@@ -17,7 +17,7 @@ export default function Content({style = {}, title, children, withoutScrollView}
 
     return (
         <View style={generalStyles.container}>
-            {title && <Text style={generalStyles.pageTitle}>{title}</Text>}
+            {title ? <Text style={generalStyles.pageTitle}>{title}</Text> : null}
             {withoutScrollView ? (
                 <View style={contentStyling}>{children}</View>
             ) : (

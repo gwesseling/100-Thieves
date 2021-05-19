@@ -27,7 +27,7 @@ const CREATOR_STYLE = {
 /**
  * Creator component
  */
-function Creator() {
+export default function Creator() {
     const {params} = useRoute();
     const {name, tag, cover, about, links, channelID} = useCreator(params?.id, 15);
     const {videos} = useCreatorVideos(channelID);
@@ -50,5 +50,3 @@ function Creator() {
         </Fragment>
     );
 }
-
-export default Creator;

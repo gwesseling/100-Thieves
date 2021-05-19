@@ -32,6 +32,7 @@ export default function Router() {
             <DrawerNav.Navigator
                 initialRouteName="Home"
                 backBehavior="history"
+                drawerType="back"
                 drawerContent={renderDrawer}
                 overlayColor={"rgba(0, 0, 0, .3)"}
             >

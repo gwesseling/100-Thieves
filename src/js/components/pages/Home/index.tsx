@@ -12,7 +12,7 @@ import styles from "_STYLES/pages/home";
  */
 export default function Home() {
     const {selected, onScrollEnd} = useHome();
-    const {height, width} = useWindowDimensions();
+    const {height} = useWindowDimensions();
 
     return (
         <Content style={styles.container} withoutScrollView>
@@ -31,6 +31,7 @@ export default function Home() {
                         description={item.description}
                         video={item.video}
                         cover={item.cover}
+                        poster={item.poster}
                         isActive={selected === index}
                     />
                 )}

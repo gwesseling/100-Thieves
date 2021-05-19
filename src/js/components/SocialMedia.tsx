@@ -12,7 +12,6 @@ type Props = {
     link: string;
 };
 
-// TODO: add verify check?
 /**
  * Social media component
  */

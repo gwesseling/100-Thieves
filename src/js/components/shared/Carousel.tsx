@@ -22,7 +22,7 @@ export default function Carousel(props: Props) {
 
     return (
         <View style={containerStyle}>
-            {title && <Text style={[styles.sectionText, titleStyle]}>{title}</Text>}
+            {title ? <Text style={[styles.sectionText, titleStyle]}>{title}</Text> : null}
             <FlatList horizontal showsHorizontalScrollIndicator={false} {...restProps} />
         </View>
     );

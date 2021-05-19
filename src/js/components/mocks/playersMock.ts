@@ -70,11 +70,6 @@ export const leaguePlayersMock = [
                 link: "https://www.twitch.tv/ssumday",
             },
         ],
-        stats: {
-            games: 20,
-            kills: 64,
-            deaths: 15,
-        },
         games: [
             {
                 id: "0",
